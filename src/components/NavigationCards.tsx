@@ -3,24 +3,24 @@ import { ChevronRight, TrendingUp, DollarSign, HelpCircle } from 'lucide-react';
 export function NavigationCards() {
   const cards = [
     {
-      icon: <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+      icon: <div className="w-4 h-4 bg-[#a4dd6b] rounded-full flex items-center justify-center">
         <span className="text-white text-sm font-bold">?</span>
       </div>,
       title: "What we offer",
       description: "Discover our investment products and features",
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-green-500" />,
+      icon: <TrendingUp className="w-4 h-4 text-[#a4dd6b]" />,
       title: "Stock market today",
       description: "View real-time market data and trends",
     },
     {
-      icon: <DollarSign className="w-8 h-8 text-moomoo-orange" />,
+      icon: <DollarSign className="w-4 h-4 text-[#a4dd6b]" />,
       title: "Fees and commissions",
       description: "Learn about our competitive pricing",
     },
     {
-      icon: <HelpCircle className="w-8 h-8 text-purple-500" />,
+      icon: <HelpCircle className="w-4 h-4 text-[#a4dd6b]" />,
       title: "Why moomoo",
       description: "See what makes us different",
     },
@@ -33,14 +33,16 @@ export function NavigationCards() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer group"
+              className="bg-white border border-[#1a3b44] rounded-lg p-6 hover:shadow-lg transition-all cursor-pointer group hover:border-[#a4dd6b]"
             >
-              <div className="flex items-center justify-between mb-4">
-                {card.icon}
-                <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-moomoo-orange transition-colors" />
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  {card.icon}
+                  <h3 className="font-semibold text-black">{card.title}</h3>
+                </div>
+                <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#a4dd6b] transition-colors" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">{card.title}</h3>
-              <p className="text-sm text-gray-600">{card.description}</p>
+              {/* <p className="text-sm text-black">{card.description}</p> */}
             </div>
           ))}
         </div>

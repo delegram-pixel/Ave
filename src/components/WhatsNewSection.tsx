@@ -54,9 +54,9 @@ export function WhatsNewSection() {
   };
 
   return (
-    <section className="bg-moomoo-light py-16">
+    <section className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">
+        <h2 className="text-3xl lg:text-4xl font-bold text-center text-black mb-12">
           What&apos;s New
         </h2>
 
@@ -64,9 +64,9 @@ export function WhatsNewSection() {
           {/* Navigation buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#0f2b33] rounded-full p-2 shadow-lg hover:shadow-xl transition-all hover:bg-[#a4dd6b] hover:text-[#061519]"
           >
-            <ChevronLeft className="w-6 h-6 text-gray-600" />
+            <ChevronLeft className="w-6 h-6 text-white" />
           </button>
 
           <button
@@ -84,7 +84,7 @@ export function WhatsNewSection() {
             >
               {cards.map((card, index) => (
                 <div key={index} className="w-1/3 flex-shrink-0 px-3">
-                  <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="bg-[#0f2b33] border border-[#1a3b44] rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-[#a4dd6b]">
                     <div className="relative w-full h-48">
                       <Image
                         src={card.image}
@@ -95,20 +95,20 @@ export function WhatsNewSection() {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="font-bold text-xl text-gray-900 mb-3">
+                      <h3 className="font-bold text-xl text-white mb-3">
                         {card.title}
                       </h3>
-                      <p className="text-gray-600 mb-4 leading-relaxed">
+                      <p className="text-gray-300 mb-4 leading-relaxed">
                         {card.description}
                       </p>
                       <a
                         href="#"
-                        className="text-moomoo-orange font-semibold hover:text-moomoo-orange-hover transition-colors"
+                        className="text-[#a4dd6b] font-semibold hover:text-[#8ec65a] transition-colors"
                       >
                         {card.cta}
                       </a>
                       {card.disclaimer && (
-                        <p className="text-xs text-gray-400 mt-3">
+                        <p className="text-xs text-gray-500 mt-3">
                           {card.disclaimer}
                         </p>
                       )}
