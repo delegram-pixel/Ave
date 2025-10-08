@@ -3,12 +3,12 @@ import { Button } from '@/components/ui/button';
 export function PromotionSection() {
   return (
     <section className="bg-gradient-to-r from-gray-900 to-black text-white py-16 lg:py-24">
-      <div className="container mx-auto px-4">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div className="space-y-8">
             <div className="transform -rotate-3">
-              <div className="text-moomoo-orange text-lg font-semibold uppercase tracking-wider">
+              <div className="text-[#a4dd6b] text-lg font-semibold uppercase tracking-wider">
                 EARN UP TO
               </div>
             </div>
@@ -22,10 +22,10 @@ export function PromotionSection() {
               </div>
             </div>
 
-            <div className="bg-moomoo-orange/20 border border-moomoo-orange rounded-lg p-4">
+            <div className="bg-[#a4dd6b]/20 border border-[#a4dd6b] rounded-lg p-4">
               <div className="flex items-center space-x-4">
-                <div className="bg-moomoo-orange rounded-lg p-3">
-                  <span className="text-white text-xl font-bold">8.1%</span>
+                <div className="bg-[#a4dd6b] rounded-lg p-3">
+                  <span className="text-black text-xl font-bold">8.1%</span>
                 </div>
                 <div>
                   <div className="text-white font-semibold">APY</div>
@@ -36,13 +36,13 @@ export function PromotionSection() {
 
             <Button
               size="lg"
-              className="bg-moomoo-orange hover:bg-moomoo-orange-hover text-white px-12 py-6 text-xl rounded-full font-bold"
+              className="bg-[#a4dd6b] hover:bg-[#8ec65a] text-black px-12 py-6 text-xl rounded-full font-bold"
             >
               Unlock Now
             </Button>
 
             <div className="text-sm text-gray-400 leading-relaxed">
-              Offer <span className="text-moomoo-orange underline cursor-pointer">Terms & Conditions apply</span>. Options trading is risky and not for all. Read the <span className="text-moomoo-orange underline cursor-pointer">Options Disclosure Document</span> before trading. <span className="text-moomoo-orange underline cursor-pointer">Disclosure</span>
+              Offer <span className="text-[#a4dd6b] underline cursor-pointer">Terms & Conditions apply</span>. Options trading is risky and not for all. Read the <span className="text-[#a4dd6b] underline cursor-pointer">Options Disclosure Document</span> before trading. <span className="text-[#a4dd6b] underline cursor-pointer">Disclosure</span>
             </div>
           </div>
 

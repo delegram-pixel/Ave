@@ -1,56 +1,57 @@
-import { Button } from '@/components/ui/button';
+
+import { Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
 
 export function Footer() {
-  const footerSections = [
-    {
-      title: "Customer Service",
-      links: [
-        "+1 888 721 0610",
-        "cs@us.moomoo.com",
-        "Mon-Fri, 8:30 - 16:30 ET",
-        "Online Inquiry",
-        "24/7"
-      ]
-    },
-    {
-      title: "Form CRS",
-      links: []
-    },
-    {
-      title: "About moomoo",
-      links: [
-        "About moomoo",
-        "Contact Us",
-        "Influencer Program",
-        "Investor Relations",
-        "Newsroom",
-        "ESG"
-      ]
-    },
-    {
-      title: "Terms and Conditions (Brokerage)",
-      links: [
-        "Terms of Use",
-        "Privacy Policy",
-        "Privacy Notice",
-        "Customer Agreement",
-        "Terms and Agreements",
-        "Accessibility Statement",
-        "Licensed Entities*"
-      ]
-    },
-    {
-      title: "Terms and Conditions (Crypto)",
-      links: []
-    },
-    {
-      title: "Careers / Contact:",
-      links: [
-        "Apply Now",
-        "hr@us.moomoo.com"
-      ]
-    }
-  ];
+  // const footerSections = [
+    // {
+    //   title: "Customer Service",
+    //   links: [
+    //     "+1 888 721 0610",
+    //     "cs@us.moomoo.com",
+    //     "Mon-Fri, 8:30 - 16:30 ET",
+    //     "Online Inquiry",
+    //     "24/7"
+    //   ]
+    // },
+    // {
+    //   title: "Form CRS",
+    //   links: []
+    // },
+    // {
+    //   title: "About moomoo",
+    //   links: [
+    //     "About moomoo",
+    //     "Contact Us",
+    //     "Influencer Program",
+    //     "Investor Relations",
+    //     "Newsroom",
+    //     "ESG"
+    //   ]
+    // },
+    // {
+    //   title: "Terms and Conditions (Brokerage)",
+    //   links: [
+    //     "Terms of Use",
+    //     "Privacy Policy",
+    //     "Privacy Notice",
+    //     "Customer Agreement",
+    //     "Terms and Agreements",
+    //     "Accessibility Statement",
+    //     "Licensed Entities*"
+    //   ]
+    // },
+    // {
+    //   title: "Terms and Conditions (Crypto)",
+    //   links: []
+    // },
+    // {
+    //   title: "Careers / Contact:",
+    //   links: [
+    //     "Apply Now",
+    //     "hr@us.moomoo.com"
+    //   ]
+    // }
+  // ];
 
   const socialIcons = [
     { name: "Twitter", icon: "𝕏" },
@@ -63,11 +64,11 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-black text-white py-12">
-      <div className="container px-4 mx-auto max-w-6xl">
+    <footer className="bg-[#061519] text-white py-12">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
         {/* Main footer content */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
-          {footerSections.map((section, index) => (
+          {/* {footerSections.map((section, index) => (
             <div key={index} className="space-y-4">
               <h3 className="font-semibold text-white">{section.title}</h3>
               <div className="space-y-6">
@@ -75,7 +76,7 @@ export function Footer() {
                   <li key={linkIndex}>
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="text-gray-400 hover:text-[#a4dd6b] transition-colors text-sm"
                     >
                       {link}
                     </a>
@@ -85,24 +86,24 @@ export function Footer() {
               {section.title === "Customer Service" && (
                 <Button
                   variant="outline"
-                  className="mt-4 border-gray-600 text-gray-300 hover:bg-gray-800"
+                  className="mt-4 border-[#a4dd6b] text-white hover:bg-[#a4dd6b] hover:text-[#061519] transition-colors"
                 >
                   💬 Online Inquiry
                 </Button>
               )}
             </div>
-          ))}
+          ))} */}
         </div>
 
         {/* Social media */}
-        <div className="pt-12 border-t border-gray-800">
-          <h3 className="font-semibold mb-6 text-lg">Follow us on</h3>
-          <div className="flex flex-wrap gap-6">
+        <div className="pt-12 border-t border-[#0f2b33]">
+          <h3 className="font-semibold mb-6 text-lg text-[#a4dd6b]">Follow us on</h3>
+          <div className="flex flex-wrap gap-4">
             {socialIcons.map((social, index) => (
               <a
                 key={index}
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
+                className="w-10 h-10 rounded-full bg-[#0f2b33] flex items-center justify-center text-white hover:bg-[#a4dd6b] hover:text-[#061519] transition-colors"
               >
                 <span className="text-sm">{social.icon}</span>
               </a>
@@ -111,7 +112,7 @@ export function Footer() {
         </div>
 
         {/* Legal disclaimers */}
-        <div className="space-y-6 text-sm text-gray-400 leading-relaxed">
+        <div className="mt-12 space-y-6 text-sm text-gray-300 leading-relaxed">
           <p>All investing involves risk.</p>
 
           <p>
@@ -150,11 +151,13 @@ export function Footer() {
             The products and services offered on this website are subject to applicable laws, regulations, and terms of use, and may not be available in all jurisdictions. Please review our Privacy Policy, Terms of Use, and Risk Disclosures for additional important information.
           </p>
 
-          <div className="flex space-x-4 text-moomoo-orange">
-            <a href="#" className="hover:underline">Privacy Policy</a>
-            <span>|</span>
-            <a href="#" className="hover:underline">Terms of Use</a>
-          </div>
+              <div className="flex flex-wrap space-x-4 text-[#a4dd6b]">
+                <a href="#" aria-label="Facebook" className="hover:text-white transition-colors"><Facebook className="w-6 h-6" /></a>
+                <a href="#" aria-label="Twitter" className="hover:text-white transition-colors"><Twitter className="w-6 h-6" /></a>
+                <a href="#" aria-label="Instagram" className="hover:text-white transition-colors"><Instagram className="w-6 h-6" /></a>
+                <a href="#" aria-label="Youtube" className="hover:text-white transition-colors"><Youtube className="w-6 h-6" /></a>
+                <a href="#" aria-label="Linkedin" className="hover:text-white transition-colors"><Linkedin className="w-6 h-6" /></a>
+              </div>
         </div>
 
         {/* Copyright */}

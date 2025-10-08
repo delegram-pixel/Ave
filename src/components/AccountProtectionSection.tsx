@@ -13,8 +13,8 @@ export function AccountProtectionSection() {
     ];
   
     return (
-      <section className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
+      <section className="bg-[#061519] text-white py-16">
+        <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
           <div className="mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold">
               Your account is protected
@@ -23,7 +23,7 @@ export function AccountProtectionSection() {
   
           <div className="space-y-8">
             {protections.map((protection, index) => (
-              <div key={index} className="border-b border-gray-800 pb-6 last:border-b-0">
+              <div key={index} className="border-b border-[#0f2b33] pb-6 last:border-b-0">
                 <div className="grid lg:grid-cols-3 gap-8 items-start">
                   <div className="lg:col-span-1">
                     <h3 className="text-xl font-semibold text-white">

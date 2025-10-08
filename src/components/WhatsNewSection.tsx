@@ -1,11 +1,28 @@
 'use client';
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export function WhatsNewSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // This code runs only on the client side
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const cards = [
     {
@@ -54,9 +71,9 @@ export function WhatsNewSection() {
   };
 
   return (
-    <section className="bg-moomoo-light py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">
+    <section className="bg-white py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl lg:text-4xl font-bold text-center text-black mb-12">
           What&apos;s New
         </h2>
 
@@ -80,11 +97,14 @@ export function WhatsNewSection() {
           <div className="overflow-hidden mx-12">
             <div
               className="flex transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 33.333}%)` }}
+              style={{ 
+                transform: `translateX(-${currentSlide * (100 / (isMobile ? 1 : 3))}%)`,
+                width: `${cards.length * 100}%`
+              }}
             >
               {cards.map((card, index) => (
-                <div key={index} className="w-1/3 flex-shrink-0 px-3">
-                  <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-3">
+                  <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
                     <div className="relative w-full h-48">
                       <Image
                         src={card.image}
@@ -103,12 +123,12 @@ export function WhatsNewSection() {
                       </p>
                       <a
                         href="#"
-                        className="text-moomoo-orange font-semibold hover:text-moomoo-orange-hover transition-colors"
+                        className="text-[#a4dd6b] font-semibold hover:text-[#8ec65a] transition-colors"
                       >
                         {card.cta}
                       </a>
                       {card.disclaimer && (
-                        <p className="text-xs text-gray-400 mt-3">
+                        <p className="text-xs text-gray-500 mt-3">
                           {card.disclaimer}
                         </p>
                       )}

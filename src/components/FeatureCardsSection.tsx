@@ -6,8 +6,7 @@ export function FeatureCardsSection() {
       title: "Advanced orders, simplified",
       description: "Fine-tune your trading with advanced order types.",
       cta: "Learn more >",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=400&fit=crop&crop=center",
-      bgColor: "bg-gray-900"
+      bgColor: "bg-[#0f2b33]"
     },
     {
       title: "Unlock in-depth market insights",
@@ -33,16 +32,16 @@ export function FeatureCardsSection() {
   ];
 
   return (
-    <section className="bg-moomoo-light py-16">
-      <div className="container mx-auto px-4">
+    <section className="bg-[#061519] py-16">
+      <div className="container px-4 sm:px-6 lg:px-6 mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left side - Header */}
-          <div className="lg:col-span-1">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
+          <div className="lg:col-span-1 text-center lg:text-left">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
               Why trade with moomoo?
             </h2>
             <Button
-              className="bg-moomoo-orange hover:bg-moomoo-orange-hover text-white px-8 py-3 rounded-full"
+              className="bg-[#a4dd6b] hover:bg-[#8ec65a] text-black px-8 py-3 rounded-full"
             >
               Get Started
             </Button>
@@ -50,7 +49,7 @@ export function FeatureCardsSection() {
           </div>
 
           {/* Right side - Feature cards */}
-          <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
+          <div className="lg:col-span-2 grid md:grid-cols-2 gap-4 sm:gap-6 px-2 sm:px-0">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -58,7 +57,7 @@ export function FeatureCardsSection() {
               >
                 {/* Background pattern */}
                 <div className="absolute inset-0 opacity-10">
-                  <div className="w-full h-full bg-gradient-to-br from-moomoo-orange/20 to-transparent"></div>
+                  <div className="w-full h-full bg-gradient-to-br from-[#a4dd6b]/20 to-transparent"></div>
                 </div>
 
                 <div className="relative z-10">
@@ -81,7 +80,7 @@ export function FeatureCardsSection() {
                         <div className="text-gray-400 text-xs">moomoo</div>
                       </div>
                       <div className="space-y-2">
-                        <div className="bg-moomoo-orange/20 rounded h-2"></div>
+                        <div className="bg-[#a4dd6b]/20 rounded h-2"></div>
                         <div className="bg-green-500/20 rounded h-2 w-3/4"></div>
                         <div className="bg-blue-500/20 rounded h-2 w-1/2"></div>
                       </div>
@@ -90,7 +89,7 @@ export function FeatureCardsSection() {
 
                   <a
                     href="#"
-                    className="text-moomoo-orange font-semibold hover:text-orange-300 transition-colors text-sm"
+                    className="text-[#a4dd6b] font-semibold hover:text-green-300 transition-colors text-sm"
                   >
                     {feature.cta}
                   </a>

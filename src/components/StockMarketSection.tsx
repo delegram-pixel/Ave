@@ -61,7 +61,7 @@ export function StockMarketSection() {
 
   return (
     <section className="bg-white py-16">
-      <div className="container mx-auto px-4">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
         <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">
           One-stop App to Trade Stocks, Options and ETFs
         </h2>
@@ -75,7 +75,7 @@ export function StockMarketSection() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 font-semibold transition-colors ${
                   activeTab === tab
-                    ? 'text-moomoo-orange border-b-2 border-moomoo-orange'
+                    ? 'text-[#a4dd6b] border-b-2 border-[#a4dd6b]'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -152,7 +152,7 @@ export function StockMarketSection() {
                       {stock.changePercent}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <button className="text-gray-400 hover:text-moomoo-orange">
+                      <button className="text-gray-400 hover:text-[#a4dd6b]">
                         <Heart className="w-5 h-5" />
                       </button>
                     </td>
@@ -165,7 +165,7 @@ export function StockMarketSection() {
 
         <div className="text-center mt-8">
           <Button
-            className="bg-moomoo-orange hover:bg-moomoo-orange-hover text-white px-8 py-3 rounded-full"
+            className="bg-[#a4dd6b] hover:bg-[#8ec65a] text-black px-8 py-3 rounded-full"
           >
             Learn more
           </Button>
