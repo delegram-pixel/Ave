@@ -10,7 +10,7 @@ export function Header() {
 
   return (
     <header className="bg-[#061519] text-white sticky top-0 z-50 border-b border-[#0f2b33]">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
@@ -30,7 +30,7 @@ export function Header() {
           </div>
 
           {/* Navigation - Desktop */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             <div className="relative group">
               <span className="flex items-center space-x-1 hover:text-[#a4dd6b] transition-colors">
                 <span>Investments</span>
@@ -91,7 +91,7 @@ export function Header() {
           </nav>
 
           {/* Right side */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <button className="p-2 hover:bg-[#0f2b33] rounded-md transition-colors">
               <Search className="w-5 h-5" />
             </button>

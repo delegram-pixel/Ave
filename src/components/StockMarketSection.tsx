@@ -75,7 +75,7 @@ export function StockMarketSection() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 font-semibold transition-colors ${
                   activeTab === tab
-                    ? 'text-moomoo-orange border-b-2 border-moomoo-orange'
+                    ? 'text-[#a4dd6b] border-b-2 border-[#a4dd6b]'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -152,7 +152,7 @@ export function StockMarketSection() {
                       {stock.changePercent}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <button className="text-gray-400 hover:text-moomoo-orange">
+                      <button className="text-gray-400 hover:text-[#a4dd6b]">
                         <Heart className="w-5 h-5" />
                       </button>
                     </td>
@@ -165,7 +165,7 @@ export function StockMarketSection() {
 
         <div className="text-center mt-8">
           <Button
-            className="bg-moomoo-orange hover:bg-moomoo-orange-hover text-white px-8 py-3 rounded-full"
+            className="bg-[#a4dd6b] hover:bg-[#8ec65a] text-black px-8 py-3 rounded-full"
           >
             Learn more
           </Button>

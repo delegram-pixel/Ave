@@ -32,7 +32,7 @@ export function OptionsSection() {
                 </h3>
   
                 {features.map((feature, index) => (
-                  <div key={index} className="border-l-4 border-moomoo-orange pl-6 py-2">
+                  <div key={index} className="border-l-4 border-[#a4dd6b] pl-6 py-2">
                     <h4 className="font-semibold text-gray-900 mb-2">
                       {feature.title}
                     </h4>
@@ -110,7 +110,7 @@ export function OptionsSection() {
                 </div>
   
                 {/* Floating badge */}
-                <div className="absolute -top-4 -right-4 bg-moomoo-orange rounded-lg p-3 text-white text-sm font-semibold shadow-lg">
+                <div className="absolute -top-4 -right-4 bg-[#a4dd6b] rounded-lg p-3 text-white text-sm font-semibold shadow-lg">
                   Pro Options
                 </div>
               </div>

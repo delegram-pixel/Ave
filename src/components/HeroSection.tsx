@@ -6,19 +6,19 @@ export function HeroSection() {
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#a4dd6b]/10 to-transparent"></div>
 
-      <div className="container mx-auto px-4 py-16 lg:py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 The Next-Gen<br />
                 Online Trading Platform
               </h1>
             </div>
 
             {/* Awards */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-2 sm:gap-4 justify-center lg:justify-start">
               <div className="bg-[#a4dd6b] text-[#061519] px-3 py-2 rounded-lg text-sm font-semibold">
                 Best Stock Trading App
               </div>
@@ -47,7 +47,7 @@ export function HeroSection() {
           </div>
 
           {/* Right side - Computer screens */}
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <div className="relative max-w-lg mx-auto">
               {/* Main screen */}
               <div className="bg-[#0f2b33] rounded-lg p-1 shadow-2xl transform rotate-3">

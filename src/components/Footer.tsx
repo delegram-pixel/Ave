@@ -1,4 +1,6 @@
 
+import { Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
+
 export function Footer() {
   // const footerSections = [
     // {
@@ -149,11 +151,13 @@ export function Footer() {
             The products and services offered on this website are subject to applicable laws, regulations, and terms of use, and may not be available in all jurisdictions. Please review our Privacy Policy, Terms of Use, and Risk Disclosures for additional important information.
           </p>
 
-          <div className="flex space-x-4 text-moomoo-orange">
-            <a href="#" className="hover:underline">Privacy Policy</a>
-            <span>|</span>
-            <a href="#" className="hover:underline">Terms of Use</a>
-          </div>
+              <div className="flex space-x-4 text-[#a4dd6b]">
+                <a href="#" aria-label="Facebook" className="hover:text-white transition-colors"><Facebook className="w-6 h-6" /></a>
+                <a href="#" aria-label="Twitter" className="hover:text-white transition-colors"><Twitter className="w-6 h-6" /></a>
+                <a href="#" aria-label="Instagram" className="hover:text-white transition-colors"><Instagram className="w-6 h-6" /></a>
+                <a href="#" aria-label="Youtube" className="hover:text-white transition-colors"><Youtube className="w-6 h-6" /></a>
+                <a href="#" aria-label="Linkedin" className="hover:text-white transition-colors"><Linkedin className="w-6 h-6" /></a>
+              </div>
         </div>
 
         {/* Copyright */}

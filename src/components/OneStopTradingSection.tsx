@@ -57,7 +57,7 @@ export function OneStopTradingSection() {
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-bold">{feature.title}</h3>
-                <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-moomoo-orange transition-colors" />
+                <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#a4dd6b] transition-colors" />
               </div>
 
               <p className="text-gray-300 mb-6 leading-relaxed">

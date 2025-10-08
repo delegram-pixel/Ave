@@ -10,8 +10,8 @@ export function PartnerLogos() {
   
     return (
       <section className="bg-[#061519] py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-80">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 lg:gap-16 opacity-80">
             {partners.map((partner, index) => (
               <div
                 key={index}

@@ -29,7 +29,7 @@ export function EducationSection() {
             backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=600&fit=crop&crop=center')"
           }}
         >
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-[#061519]/60"></div>
         </div>
   
         <div className="container mx-auto px-4 relative z-10">
@@ -54,7 +54,7 @@ export function EducationSection() {
   
                 <a
                   href="#"
-                  className="text-moomoo-orange font-semibold hover:text-orange-300 transition-colors"
+                  className="text-[#a4dd6b] font-semibold hover:text-[#8ec65a] transition-colors"
                 >
                   {section.cta}
                 </a>
