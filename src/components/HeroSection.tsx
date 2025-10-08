@@ -6,7 +6,7 @@ export function HeroSection() {
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#a4dd6b]/10 to-transparent"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div className="space-y-8 text-center lg:text-left">

@@ -2,11 +2,12 @@ import { Button } from '@/components/ui/button';
 
 export function LowerFeesSection() {
   return (
-    <section className="bg-[#061519] text-white py-16 lg:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Content */}
-          <div className="space-y-8 text-center lg:text-left">
+    <section className="bg-[#061519] text-white py-12 md:py-16 lg:py-20 px-6 md:px-12 lg:px-16">
+      <div className="max-w-7xl mx-auto">
+        <div className=" rounded-2xl p-6 md:p-8 lg:p-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left side - Content */}
+            <div className="space-y-6 text-center lg:text-left">
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
                 Lower fees.<br />
@@ -42,23 +43,24 @@ export function LowerFeesSection() {
           </div>
 
           {/* Right side - Highlight boxes */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6 max-w-2xl mx-auto lg:mx-0">
             <div className="bg-gradient-to-r from-[#a4dd6b] to-[#8ec65a] rounded-2xl p-6 transform rotate-1 shadow-xl">
-              <div className="text-black text-3xl lg:text-4xl font-bold">
+              <div className="text-black text-2xl sm:text-3xl lg:text-4xl font-bold">
                 $0 commission
               </div>
             </div>
 
             <div className="bg-gradient-to-r from-[#a4dd6b] to-[#8ec65a] rounded-2xl p-6 transform -rotate-1 shadow-xl">
-              <div className="text-black text-3xl lg:text-4xl font-bold">
+              <div className="text-black text-2xl sm:text-3xl lg:text-4xl font-bold">
                 6.8% margin rate
               </div>
             </div>
 
             <div className="bg-gradient-to-r from-[#a4dd6b] to-[#8ec65a] rounded-2xl p-6 transform rotate-2 shadow-xl">
-              <div className="text-black text-xl lg:text-2xl font-bold">
+              <div className="text-black text-lg sm:text-xl lg:text-2xl font-bold">
                 $0 equity option contract fee
               </div>
+            </div>
             </div>
           </div>
         </div>

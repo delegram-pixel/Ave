@@ -65,7 +65,7 @@ export function Footer() {
 
   return (
     <footer className="bg-[#061519] text-white py-12">
-      <div className="container px-4 mx-auto max-w-6xl">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
         {/* Main footer content */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
           {/* {footerSections.map((section, index) => (
@@ -98,7 +98,7 @@ export function Footer() {
         {/* Social media */}
         <div className="pt-12 border-t border-[#0f2b33]">
           <h3 className="font-semibold mb-6 text-lg text-[#a4dd6b]">Follow us on</h3>
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-4">
             {socialIcons.map((social, index) => (
               <a
                 key={index}
@@ -112,7 +112,7 @@ export function Footer() {
         </div>
 
         {/* Legal disclaimers */}
-        <div className="space-y-6 text-sm text-gray-300 leading-relaxed">
+        <div className="mt-12 space-y-6 text-sm text-gray-300 leading-relaxed">
           <p>All investing involves risk.</p>
 
           <p>
@@ -151,7 +151,7 @@ export function Footer() {
             The products and services offered on this website are subject to applicable laws, regulations, and terms of use, and may not be available in all jurisdictions. Please review our Privacy Policy, Terms of Use, and Risk Disclosures for additional important information.
           </p>
 
-              <div className="flex space-x-4 text-[#a4dd6b]">
+              <div className="flex flex-wrap space-x-4 text-[#a4dd6b]">
                 <a href="#" aria-label="Facebook" className="hover:text-white transition-colors"><Facebook className="w-6 h-6" /></a>
                 <a href="#" aria-label="Twitter" className="hover:text-white transition-colors"><Twitter className="w-6 h-6" /></a>
                 <a href="#" aria-label="Instagram" className="hover:text-white transition-colors"><Instagram className="w-6 h-6" /></a>

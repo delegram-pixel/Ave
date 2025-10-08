@@ -38,7 +38,7 @@ export function OneStopTradingSection() {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-purple-400 rounded-full animate-ping"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             One-Stop Online Trading

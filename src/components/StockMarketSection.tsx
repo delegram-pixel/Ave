@@ -61,7 +61,7 @@ export function StockMarketSection() {
 
   return (
     <section className="bg-white py-16">
-      <div className="container mx-auto px-4">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
         <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">
           One-stop App to Trade Stocks, Options and ETFs
         </h2>

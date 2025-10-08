@@ -33,7 +33,7 @@ export function FeatureCardsSection() {
 
   return (
     <section className="bg-[#061519] py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container px-4 sm:px-6 lg:px-6 mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left side - Header */}
           <div className="lg:col-span-1 text-center lg:text-left">
@@ -49,7 +49,7 @@ export function FeatureCardsSection() {
           </div>
 
           {/* Right side - Feature cards */}
-          <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
+          <div className="lg:col-span-2 grid md:grid-cols-2 gap-4 sm:gap-6 px-2 sm:px-0">
             {features.map((feature, index) => (
               <div
                 key={index}

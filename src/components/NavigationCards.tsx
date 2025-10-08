@@ -28,7 +28,7 @@ export function NavigationCards() {
 
   return (
     <section className="bg-white py-12">
-      <div className="container mx-auto px-4">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
             <div
@@ -36,7 +36,7 @@ export function NavigationCards() {
               className="bg-white border border-[#1a3b44] rounded-lg p-6 hover:shadow-lg transition-all cursor-pointer group hover:border-[#a4dd6b]"
             >
               <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
                   {card.icon}
                   <h3 className="font-semibold text-black">{card.title}</h3>
                 </div>

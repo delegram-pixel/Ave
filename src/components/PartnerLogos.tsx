@@ -10,7 +10,7 @@ export function PartnerLogos() {
   
     return (
       <section className="bg-[#061519] py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 lg:gap-16 opacity-80">
             {partners.map((partner, index) => (
               <div

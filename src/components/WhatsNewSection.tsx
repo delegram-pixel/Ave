@@ -1,11 +1,28 @@
 'use client';
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export function WhatsNewSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // This code runs only on the client side
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const cards = [
     {
@@ -55,7 +72,7 @@ export function WhatsNewSection() {
 
   return (
     <section className="bg-white py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl lg:text-4xl font-bold text-center text-black mb-12">
           What&apos;s New
         </h2>
@@ -64,9 +81,9 @@ export function WhatsNewSection() {
           {/* Navigation buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#0f2b33] rounded-full p-2 shadow-lg hover:shadow-xl transition-all hover:bg-[#a4dd6b] hover:text-[#061519]"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
           >
-            <ChevronLeft className="w-6 h-6 text-white" />
+            <ChevronLeft className="w-6 h-6 text-gray-600" />
           </button>
 
           <button
@@ -80,11 +97,14 @@ export function WhatsNewSection() {
           <div className="overflow-hidden mx-12">
             <div
               className="flex transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 33.333}%)` }}
+              style={{ 
+                transform: `translateX(-${currentSlide * (100 / (isMobile ? 1 : 3))}%)`,
+                width: `${cards.length * 100}%`
+              }}
             >
               {cards.map((card, index) => (
-                <div key={index} className="w-1/3 flex-shrink-0 px-3">
-                  <div className="bg-[#0f2b33] border border-[#1a3b44] rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-[#a4dd6b]">
+                <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-3">
+                  <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
                     <div className="relative w-full h-48">
                       <Image
                         src={card.image}
@@ -95,10 +115,10 @@ export function WhatsNewSection() {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="font-bold text-xl text-white mb-3">
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">
                         {card.title}
                       </h3>
-                      <p className="text-gray-300 mb-4 leading-relaxed">
+                      <p className="text-gray-600 mb-4 leading-relaxed">
                         {card.description}
                       </p>
                       <a

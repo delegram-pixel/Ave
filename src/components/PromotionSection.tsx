@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 export function PromotionSection() {
   return (
     <section className="bg-gradient-to-r from-gray-900 to-black text-white py-16 lg:py-24">
-      <div className="container mx-auto px-4">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div className="space-y-8">
