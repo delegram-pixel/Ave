@@ -5,6 +5,7 @@ import { useState, useRef } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 const Dropdown = ({
   title,
@@ -108,7 +109,7 @@ export function Header() {
             >
               <nav className="flex flex-col space-y-2">
                 <a href="#" className="block py-[6px] text-gray-300 hover:text-Allquity-green transition-colors">Options</a>
-                <a href="#" className="block py-[6px] text-gray-300 hover:text-Allquity-green transition-colors">Stocks</a>
+                <Link href="/dashboard/stocks" className="block py-[6px] text-gray-300 hover:text-Allquity-green transition-colors">Stocks</Link>
                 <a href="#" className="flex items-center justify-between py-[6px] text-gray-300 hover:text-Allquity-green transition-colors">
                   <span>Crypto</span>
                   <span className="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">New</span>
@@ -254,7 +255,7 @@ export function Header() {
               onMenuMouseEnter={handleDropdownOpen}
               onMenuMouseLeave={handleDropdownClose}
             >
-              <a href="#" className="block px-4 py-2 text-white hover:bg-[#2c2c2e] transition-colors">Support</a>
+              <Link href="/dashboard/help" className="block px-4 py-2 text-white hover:bg-[#2c2c2e] transition-colors">Support</Link>
               <a href="#" className="block px-4 py-2 text-white hover:bg-[#2c2c2e] transition-colors">About Us</a>
             </Dropdown>
           </nav>
@@ -266,12 +267,14 @@ export function Header() {
             </button> */}
 
             <div className="hidden lg:flex items-center space-x-2">
-              <Button
-                variant="outline"
-                className="bg-[#a4dd6b] hover:bg-[#8ec65a] text-[#061519] border-[#a4dd6b] transition-colors"
-              >
-                Log in
-              </Button>
+              <Link href="/dashboard">
+                <Button
+                  variant="outline"
+                  className="bg-[#a4dd6b] hover:bg-[#8ec65a] text-[#061519] border-[#a4dd6b] transition-colors"
+                >
+                  Log in
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -309,12 +312,14 @@ export function Header() {
               <a href="#" className="hover:text-[#a4dd6b] transition-colors">
                 About Us
               </a>
-              <Button
-                variant="outline"
-                className="bg-[#a4dd6b] hover:bg-[#8ec65a] text-[#061519] border-[#a4dd6b] w-fit transition-colors"
-              >
-                Log in
-              </Button>
+              <Link href="/dashboard">
+                <Button
+                  variant="outline"
+                  className="bg-[#a4dd6b] hover:bg-[#8ec65a] text-[#061519] border-[#a4dd6b] w-fit transition-colors"
+                >
+                  Log in
+                </Button>
+              </Link>
             </nav>
           </div>
         )}

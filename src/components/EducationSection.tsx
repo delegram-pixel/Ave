@@ -16,7 +16,8 @@ export function EducationSection() {
         title: "Allquity Community",
         description: "Connect, chat, and grow with 27 millions Allquity users worldwide.",
         cta: "Learn more >",
-        icon: "👥"
+        icon: "👥",
+        link: "https://t.me/+EhXO8k-ix2gwM2Vh"
       }
     ];
   
@@ -53,7 +54,9 @@ export function EducationSection() {
                 </p>
   
                 <a
-                  href="#"
+                  href={section.link || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#a4dd6b] font-semibold hover:text-[#8ec65a] transition-colors"
                 >
                   {section.cta}

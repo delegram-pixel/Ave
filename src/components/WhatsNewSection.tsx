@@ -9,20 +9,19 @@ export function WhatsNewSection() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // This code runs only on the client side
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
     
-    // Set initial value
     handleResize();
-    
-    // Add event listener
     window.addEventListener('resize', handleResize);
     
-    // Clean up
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [isMobile]);
 
   const cards = [
     {
@@ -62,12 +61,24 @@ export function WhatsNewSection() {
     },
   ];
 
+  const slidesInView = isMobile ? 1 : 3;
+  const totalCards = cards.length;
+  const maxSlide = totalCards > slidesInView ? totalCards - slidesInView : 0;
+
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % Math.max(1, cards.length - 2));
+    if (isMobile) {
+      setCurrentSlide((prev) => (prev + 1) % totalCards);
+    } else {
+      setCurrentSlide((prev) => Math.min(prev + 1, maxSlide));
+    }
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + Math.max(1, cards.length - 2)) % Math.max(1, cards.length - 2));
+    if (isMobile) {
+      setCurrentSlide((prev) => (prev - 1 + totalCards) % totalCards);
+    } else {
+      setCurrentSlide((prev) => Math.max(prev - 1, 0));
+    }
   };
 
   return (
@@ -78,28 +89,26 @@ export function WhatsNewSection() {
         </h2>
 
         <div className="relative">
-          {/* Navigation buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-600" />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
-          >
-            <ChevronRight className="w-6 h-6 text-gray-600" />
-          </button>
-
           {/* Cards container */}
-          <div className="overflow-hidden mx-12">
+          <div className="overflow-hidden md:mx-12 relative">
+            {/* Navigation buttons */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow md:left-[-2rem]"
+            >
+              <ChevronLeft className="w-6 h-6 text-gray-600" />
+            </button>
+
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow md:right-[-2rem]"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-600" />
+            </button>
             <div
               className="flex transition-transform duration-300 ease-in-out"
               style={{ 
-                transform: `translateX(-${currentSlide * (100 / (isMobile ? 1 : 3))}%)`,
-                width: `${cards.length * 100}%`
+                transform: `translateX(-${currentSlide * (100 / slidesInView)}%)`,
               }}
             >
               {cards.map((card, index) => (
