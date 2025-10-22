@@ -58,12 +58,12 @@ export function DashboardHome() {
       <Card className="mb-8 p-8 bg-gray-800 border-gray-700">
         <div className="mb-6">
           <p className="text-muted-foreground text-sm mb-2">
-            Your total wealth <span className="text-Allquity">in NGN</span>
+            Your total wealth <span className="text-allquity">in NGN</span>
           </p>
           <h2 className="text-5xl font-bold text-foreground mb-6">₦0.00</h2>
           <div className="flex gap-4">
             <Button
-              className="bg-Allquity hover:bg-Allquity/90 text-Background font-medium"
+              className="bg-allquity hover:bg-allquity/90 text-primary-foreground font-medium"
               onClick={() => setShowAddMoneyModal(true)}
             >
               <Plus className="w-4 h-4 mr-2" />
@@ -97,7 +97,7 @@ export function DashboardHome() {
           </Card>
 
           {/* Call to Action */}
-          <Card className="p-8 bg-gradient-to-br from-Allquity/90 to-Allquity border-0 relative overflow-hidden">
+          <Card className="p-8 bg-gradient-to-br from-allquity/90 to-allquity border-0 relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-white font-semibold text-xl mb-2">Ready to take an action?</h3>
               <p className="text-white/90 text-sm mb-4">Deposit any amount today, your goals start here</p>
@@ -109,7 +109,7 @@ export function DashboardHome() {
           <div>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-foreground">Portfolio</h2>
-              <Button variant="link" className="text-Allquity hover:text-Allquity/90">
+              <Button variant="link" className="text-allquity hover:text-allquity/90">
                 + New Investment
               </Button>
             </div>

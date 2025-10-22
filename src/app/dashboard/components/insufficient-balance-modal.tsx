@@ -33,7 +33,7 @@ export function InsufficientBalanceModal({
               Cancel
             </Button>
             <Button
-              className="flex-1 bg-Allquity hover:bg-Allquity/90 text-Background font-medium"
+              className="flex-1 bg-allquity hover:bg-allquity/90 text-Background font-medium"
               onClick={() => {
                 onOpenChange(false)
                 onMakeDeposit()

@@ -16,15 +16,15 @@ export function ProfilePage() {
       {/* Profile Info Card */}
       <Card className="p-6 mb-6 bg-card border-border">
         <div className="flex items-center gap-6">
-          <div className="w-20 h-20 rounded-full bg-Allquity flex items-center justify-center">
-            <User className="w-10 h-10 text-Background" />
+          <div className="w-20 h-20 rounded-full bg-allquity flex items-center justify-center">
+            <User className="w-10 h-10 text-primary-foreground" />
           </div>
           <div className="flex-1">
             <h2 className="text-2xl font-bold text-foreground">Bamidele I.</h2>
             <p className="text-muted-foreground">bamidele@example.com</p>
             <p className="text-sm text-muted-foreground mt-1">Member since January 2025</p>
           </div>
-          <Button variant="outline" className="border-Allquity-orange text-Allquity-orange hover:bg-Allquity-orange/10">
+          <Button variant="outline" className="border-allquity text-allquity hover:bg-allquity/10">
             Edit Profile
           </Button>
         </div>

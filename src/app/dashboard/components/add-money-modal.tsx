@@ -35,7 +35,7 @@ export function AddMoneyModal({ open, onOpenChange }: AddMoneyModalProps) {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-Allquity/20 flex items-center justify-center text-2xl">
+                  <div className="w-12 h-12 rounded-lg bg-allquity/20 flex items-center justify-center text-2xl">
                     {wallet.flag}
                   </div>
                   <div>

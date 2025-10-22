@@ -19,9 +19,9 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
 
   return (
-    <div className="flex h-screen bg-background">
+    <div className="flex h-screen w-full bg-dashboard-bg overflow-x-hidden">
       {/* Sidebar Navigation */}
-      <aside className="w-64 border-r border-gray-700 bg-gray-800 flex flex-col">
+      <aside className="w-64 border-r border-gray-700 bg-dashboard-bg flex flex-col">
         {/* Logo */}
         <div className="p-6 border-b border-sidebar-border">
           <h1 className="text-2xl font-bold text-primary">Allquity</h1>
@@ -39,7 +39,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                 href={item.href}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                   isActive
-                    ? "bg-primary text-primary-foreground font-medium"
+                    ? "bg-allquity text-primary-foreground font-medium"
                     : "text-gray-300 hover:bg-gray-700 hover:text-white"
                 }`}
               >
@@ -52,9 +52,9 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
 
         {/* User Profile */}
         <div className="p-4 border-t border-gray-700">
-          <Link href="/profile">
+          <Link href="/dashboard/profile">
             <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-700 cursor-pointer hover:bg-gray-600 transition-colors">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-primary">
+              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-allquity">
                 <User className="w-5 h-5 text-primary-foreground" />
               </div>
               <div className="flex-1 min-w-0">
@@ -69,7 +69,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Top Header */}
-        <header className="h-16 border-b border-gray-700 bg-gray-800 flex items-center justify-between px-8">
+        <header className="h-16 border-b border-gray-700 bg-dashboard-bg flex items-center justify-between px-8">
           <div className="flex-1 max-w-xl">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -83,7 +83,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-4 ml-4">
             <Button variant="ghost" size="icon" className="relative text-gray-400 hover:text-white">
               <Bell className="w-5 h-5" />
-              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary"></span>
+              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-allquity"></span>
             </Button>
           </div>
         </header>

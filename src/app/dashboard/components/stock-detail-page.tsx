@@ -91,7 +91,7 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
 
         {/* Tabs */}
         <div className="flex border-b border-border">
-          <button className="flex-1 py-3 text-sm font-medium text-foreground border-b-2 border-Allquity">About</button>
+          <button className="flex-1 py-3 text-sm font-medium text-foreground border-b-2 border-allquity">About</button>
           <button className="flex-1 py-3 text-sm font-medium text-muted-foreground hover:text-foreground">
             Financials
           </button>
@@ -173,7 +173,7 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
               onClick={() => setSelectedPeriod(period)}
               className={
                 selectedPeriod === period
-                  ? "bg-Allquity text-Background"
+                  ? "bg-allquity text-Background"
                   : "text-muted-foreground hover:text-foreground"
               }
             >
@@ -183,7 +183,7 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
         </div>
 
         {/* Recurring Purchase Card */}
-        <Card className="mb-4 p-4 bg-gradient-to-br from-Allquity to-Allquity/80 border-0 cursor-pointer hover:scale-[1.02] transition-transform">
+        <Card className="mb-4 p-4 bg-gradient-to-br from-allquity to-allquity/80 border-0 cursor-pointer hover:scale-[1.02] transition-transform">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="text-3xl">💰</div>
@@ -203,7 +203,7 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
 
         {/* Buy Button */}
         <Button
-          className="w-full bg-Allquity hover:bg-Allquity/90 text-Background font-medium h-12 text-lg"
+          className="w-full bg-allquity hover:bg-allquity/90 text-Background font-medium h-12 text-lg"
           onClick={handleBuyClick}
         >
           + Buy

@@ -127,7 +127,7 @@ export function StockBrowsePage() {
       {/* Header */}
       <div className="sticky top-0 z-10 bg-sidebar border-b border-border">
         <div className="flex items-center gap-4 p-4">
-          <Link href="/invest">
+          <Link href="/dashboard/invest">
             <Button variant="ghost" size="icon" className="text-foreground">
               <ArrowLeft className="w-5 h-5" />
             </Button>
@@ -219,11 +219,11 @@ export function StockBrowsePage() {
                     <p className="text-foreground font-semibold">${stock.price.toFixed(2)}</p>
                     <div className="flex items-center justify-end gap-1">
                       {stock.change >= 0 ? (
-                        <TrendingUp className="w-3 h-3 text-Allquity" />
+                        <TrendingUp className="w-3 h-3 text-allquity" />
                       ) : (
                         <TrendingDown className="w-3 h-3 text-destructive" />
                       )}
-                      <p className={`text-sm ${stock.change >= 0 ? "text-Allquity" : "text-destructive"}`}>
+                      <p className={`text-sm ${stock.change >= 0 ? "text-allquity" : "text-destructive"}`}>
                         {stock.changePercent.toFixed(2)}%
                       </p>
                     </div>
