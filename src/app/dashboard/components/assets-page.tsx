@@ -86,8 +86,8 @@ export function AssetsPage() {
     <div className="p-8 max-w-7xl mx-auto">
       {/* Page Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-foreground mb-2">Assets</h1>
-        <p className="text-muted-foreground">Explore investment opportunities and grow your wealth</p>
+        <h1 className="text-3xl font-bold text-[#a4dd6b] mb-2">Assets</h1>
+        <p className="text-white">Explore investment opportunities and grow your wealth</p>
       </div>
 
       {/* Filter Tabs */}
@@ -100,7 +100,7 @@ export function AssetsPage() {
             className={
               activeFilter === tab.id
                 ? "bg-allquity hover:bg-allquity/90 text-primary-foreground font-medium"
-                : "border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                : "border-border text-white hover:bg-accent hover:text-[#a4dd6b]"
             }
           >
             {tab.label}
@@ -123,14 +123,14 @@ export function AssetsPage() {
 
       {/* All Assets Offerings */}
       <div>
-        <h2 className="text-2xl font-semibold text-foreground mb-6">All Assets Offerings</h2>
+        <h2 className="text-2xl font-semibold text-[#a4dd6b] mb-6">All Assets Offerings</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAssets.map((asset) => {
             const Icon = asset.icon
             const CardContent = (
               <Card
                 key={asset.id}
-                className="group relative p-6 bg-card border-border hover:bg-accent hover:border-allquity transition-all cursor-pointer overflow-hidden h-full"
+                className="group relative p-6 bg-card border border-gray-700 hover:bg-accent hover:border-allquity/50 transition-all cursor-pointer overflow-hidden h-full"
               >
                 {asset.isNew && (
                   <Badge className="absolute top-4 right-4 bg-allquity text-primary-foreground hover:bg-allquity/90">
@@ -142,10 +142,10 @@ export function AssetsPage() {
                 >
                   <Icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-foreground font-semibold text-lg mb-2">{asset.name}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{asset.description}</p>
+                <h3 className="text-[#a4dd6b] font-semibold text-lg mb-2">{asset.name}</h3>
+                <p className="text-white text-sm leading-relaxed">{asset.description}</p>
                 <div className="mt-4 flex items-center text-allquity opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-sm font-medium">Learn more</span>
+                  <span className="text-sm font-medium ">Learn more</span>
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </div>
               </Card>
@@ -169,8 +169,8 @@ export function AssetsPage() {
             <TrendingUp className="w-6 h-6 text-allquity" />
           </div>
           <div>
-            <h3 className="text-foreground font-semibold mb-2">New to investing?</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+            <h3 className="text-[#a4dd6b] font-semibold mb-2">New to investing?</h3>
+            <p className="text-white text-sm leading-relaxed mb-4">
               Start your investment journey with as little as $1. Our platform makes it easy to build wealth over time
               with diversified portfolios and expert guidance.
             </p>

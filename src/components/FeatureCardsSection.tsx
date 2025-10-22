@@ -32,7 +32,7 @@ export function FeatureCardsSection() {
   ];
 
   return (
-    <section className="bg-[#061519] py-16">
+    <section className="bg-[#061519] py-16 overflow-x-hidden">
       <div className="container px-4 sm:px-6 lg:px-6 mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left side - Header */}
