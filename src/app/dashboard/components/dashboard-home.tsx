@@ -38,14 +38,14 @@ export function DashboardHome() {
   const [showAddMoneyModal, setShowAddMoneyModal] = useState(false)
 
   return (
-    <div className="p-8 max-w-7xl mx-auto">
+    <div className="p-8 max-w-7xl mx-auto bg-gray-950 min-h-full">
       {/* Promotional Cards Carousel */}
       <div className="mb-8">
         <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
           {promoCards.map((card, index) => (
             <Card
               key={index}
-              className={`min-w-[320px] p-6 bg-gradient-to-br ${card.color} border-0 cursor-pointer hover:scale-105 transition-transform`}
+              className={`min-w-[320px] p-6 bg-gradient-to-br ${card.color} border border-gray-700 cursor-pointer hover:scale-105 transition-transform`}
             >
               <h3 className="text-white font-semibold text-lg mb-1">{card.title}</h3>
               <p className="text-white/90 text-sm">{card.subtitle}</p>
@@ -55,15 +55,15 @@ export function DashboardHome() {
       </div>
 
       {/* Total Wealth Section */}
-      <Card className="mb-8 p-8 bg-card border-border">
+      <Card className="mb-8 p-8 bg-gray-800 border-gray-700">
         <div className="mb-6">
           <p className="text-muted-foreground text-sm mb-2">
-            Your total wealth <span className="text-primary">in NGN</span>
+            Your total wealth <span className="text-Allquity">in NGN</span>
           </p>
           <h2 className="text-5xl font-bold text-foreground mb-6">₦0.00</h2>
           <div className="flex gap-4">
             <Button
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+              className="bg-Allquity hover:bg-Allquity/90 text-Background font-medium"
               onClick={() => setShowAddMoneyModal(true)}
             >
               <Plus className="w-4 h-4 mr-2" />
@@ -81,7 +81,7 @@ export function DashboardHome() {
         {/* Left Column */}
         <div className="space-y-6">
           {/* Referrals */}
-          <Card className="p-6 bg-card border-border">
+          <Card className="p-6 bg-gray-800 border-gray-700">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-lg bg-orange-600/20 flex items-center justify-center">
@@ -97,7 +97,7 @@ export function DashboardHome() {
           </Card>
 
           {/* Call to Action */}
-          <Card className="p-8 bg-gradient-to-br from-indigo-600 to-indigo-700 border-0 relative overflow-hidden">
+          <Card className="p-8 bg-gradient-to-br from-Allquity/90 to-Allquity border-0 relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-white font-semibold text-xl mb-2">Ready to take an action?</h3>
               <p className="text-white/90 text-sm mb-4">Deposit any amount today, your goals start here</p>
@@ -109,7 +109,7 @@ export function DashboardHome() {
           <div>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-foreground">Portfolio</h2>
-              <Button variant="link" className="text-primary hover:text-primary/90">
+              <Button variant="link" className="text-Allquity hover:text-Allquity/90">
                 + New Investment
               </Button>
             </div>
@@ -117,7 +117,7 @@ export function DashboardHome() {
               {portfolioItems.map((item, index) => (
                 <Card
                   key={index}
-                  className="p-4 bg-card border-border hover:bg-accent transition-colors cursor-pointer"
+                  className="w-full p-6 bg-gray-800 rounded-lg border-gray-700 text-left hover:bg-gray-700 transition-colors flex items-center gap-4"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -146,7 +146,7 @@ export function DashboardHome() {
               {wallets.map((wallet, index) => (
                 <Card
                   key={index}
-                  className="p-4 bg-card border-border hover:bg-accent transition-colors cursor-pointer"
+                  className="w-full p-6 bg-gray-800 rounded-lg border-gray-700 text-left hover:bg-gray-700 transition-colors flex items-center gap-4"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">

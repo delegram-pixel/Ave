@@ -9,9 +9,9 @@ import { Card } from "@/components/ui/card"
 import Link from "next/link"
 
 const featuredPortfolios = [
-  { name: "Nancy Pelosi's Last Buys", color: "bg-blue-500" },
-  { name: "Warren Buffett's Portfolio", color: "bg-purple-500" },
-  { name: "Top Tech Stocks", color: "bg-pink-500" },
+  { name: "Nancy Pelosi's Last Buys", color: "bg-Allquity-orange" },
+  { name: "Warren Buffett's Portfolio", color: "bg-Allquity-green" },
+  { name: "Top Tech Stocks", color: "bg-Allquity-gray" },
 ]
 
 const stocks = [
@@ -219,11 +219,11 @@ export function StockBrowsePage() {
                     <p className="text-foreground font-semibold">${stock.price.toFixed(2)}</p>
                     <div className="flex items-center justify-end gap-1">
                       {stock.change >= 0 ? (
-                        <TrendingUp className="w-3 h-3 text-green-500" />
+                        <TrendingUp className="w-3 h-3 text-Allquity" />
                       ) : (
-                        <TrendingDown className="w-3 h-3 text-red-500" />
+                        <TrendingDown className="w-3 h-3 text-destructive" />
                       )}
-                      <p className={`text-sm ${stock.change >= 0 ? "text-green-500" : "text-red-500"}`}>
+                      <p className={`text-sm ${stock.change >= 0 ? "text-Allquity" : "text-destructive"}`}>
                         {stock.changePercent.toFixed(2)}%
                       </p>
                     </div>

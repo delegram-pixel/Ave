@@ -5,13 +5,13 @@
 
 @layer base {
   :root {
-    --background: 199 61% 6%;
+    --background: #061519;
     --foreground: 0 0% 98%;
     --card: 199 61% 6%;
     --card-foreground: 0 0% 98%;
     --popover: 199 61% 6%;
     --popover-foreground: 0 0% 98%;
-    --primary: 89 58% 64%;
+    --primary: #a4dd6b;
     --primary-foreground: 240 5.9% 10%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -37,13 +37,13 @@
 
 :root {
   /* Dark theme as default for Bamboo */
-  --background: oklch(0.12 0.02 200);
+  --background: #061519;
   --foreground: oklch(1 0 0);
   --card: oklch(0.15 0.02 200);
   --card-foreground: oklch(1 0 0);
   --popover: oklch(0.15 0.02 200);
   --popover-foreground: oklch(1 0 0);
-  --primary: oklch(0.82 0.15 130);
+  --primary: #a4dd6b;
   --primary-foreground: oklch(0.12 0.02 200);
   --secondary: oklch(0.25 0.02 200);
   --secondary-foreground: oklch(1 0 0);
@@ -73,13 +73,13 @@
 }
 
 .dark {
-  --background: oklch(0.12 0.02 200);
+  --background: #061519;
   --foreground: oklch(1 0 0);
   --card: oklch(0.15 0.02 200);
   --card-foreground: oklch(1 0 0);
   --popover: oklch(0.15 0.02 200);
   --popover-foreground: oklch(1 0 0);
-  --primary: oklch(0.82 0.15 130);
+  --primary: #a4dd6b;
   --primary-foreground: oklch(0.12 0.02 200);
   --secondary: oklch(0.25 0.02 200);
   --secondary-foreground: oklch(1 0 0);

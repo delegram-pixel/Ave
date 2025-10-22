@@ -17,7 +17,7 @@ export function AddMoneyModal({ open, onOpenChange }: AddMoneyModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md bg-card border-border">
+      <DialogContent className="sm:max-w-md bg-white border-border">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-foreground">Add money</DialogTitle>
           <p className="text-muted-foreground">Which wallet would you like to deposit to?</p>
@@ -35,7 +35,7 @@ export function AddMoneyModal({ open, onOpenChange }: AddMoneyModalProps) {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-blue-600/20 flex items-center justify-center text-2xl">
+                  <div className="w-12 h-12 rounded-lg bg-Allquity/20 flex items-center justify-center text-2xl">
                     {wallet.flag}
                   </div>
                   <div>

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { TrendingUp, FileText, Vault, Target, FolderKanban, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+// import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 
 const filterTabs = [
@@ -22,7 +22,7 @@ const assetOfferings = [
     color: "bg-gradient-to-br from-orange-600 to-orange-700",
     currency: "usd",
     isNew: false,
-    href: "/stocks",
+    href: "/dashboard/stocks",
   },
   {
     id: "ng-stocks",
@@ -99,7 +99,7 @@ export function AssetsPage() {
             variant={activeFilter === tab.id ? "default" : "outline"}
             className={
               activeFilter === tab.id
-                ? "bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+                ? "bg-Allquity hover:bg-Allquity/90 text-Background font-medium"
                 : "border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground"
             }
           >
@@ -113,7 +113,7 @@ export function AssetsPage() {
         <div className="relative z-10 max-w-xl">
           <h2 className="text-white font-bold text-2xl mb-2">Personalised investing?</h2>
           <p className="text-white/90 mb-6">Set up your account to work for you.</p>
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
+          <Button className="bg-Allquity hover:bg-Allquity/90 text-Background font-medium">
             Get Started
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
@@ -127,36 +127,28 @@ export function AssetsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAssets.map((asset) => {
             const Icon = asset.icon
-            const CardContent = (
-              <Card
-                key={asset.id}
-                className="group relative p-6 bg-card border-border hover:bg-accent hover:border-primary transition-all cursor-pointer overflow-hidden"
+            return (
+              <Link 
+                href={asset.href || '/dashboard'} 
+                key={asset.id} 
+                className="block h-full group"
               >
-                {asset.isNew && (
-                  <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground hover:bg-primary/90">
-                    New
-                  </Badge>
-                )}
-                <div
-                  className={`w-16 h-16 rounded-xl ${asset.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
-                >
-                  <Icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-foreground font-semibold text-lg mb-2">{asset.name}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{asset.description}</p>
-                <div className="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-sm font-medium">Learn more</span>
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </div>
-              </Card>
-            )
-
-            return asset.href ? (
-              <Link key={asset.id} href={asset.href}>
-                {CardContent}
+                <Card className="h-full p-6 hover:shadow-lg transition-all duration-200">
+                  <div className="flex flex-col h-full">
+                    <div className={`w-16 h-16 rounded-xl ${asset.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-foreground font-semibold text-lg mb-2">{asset.name}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">{asset.description}</p>
+                    <div className="mt-auto">
+                      <div className="flex items-center text-Allquity opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="text-sm font-medium">Learn more</span>
+                        <ArrowRight className="w-4 h-4 ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                </Card>
               </Link>
-            ) : (
-              <div key={asset.id}>{CardContent}</div>
             )
           })}
         </div>
@@ -165,8 +157,8 @@ export function AssetsPage() {
       {/* Additional Info Section */}
       <Card className="mt-8 p-6 bg-card border-border">
         <div className="flex items-start gap-4">
-          <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
-            <TrendingUp className="w-6 h-6 text-primary" />
+          <div className="w-12 h-12 rounded-lg bg-Allquity/20 flex items-center justify-center flex-shrink-0">
+            <TrendingUp className="w-6 h-6 text-Allquity" />
           </div>
           <div>
             <h3 className="text-foreground font-semibold mb-2">New to investing?</h3>
@@ -174,7 +166,7 @@ export function AssetsPage() {
               Start your investment journey with as little as $1. Our platform makes it easy to build wealth over time
               with diversified portfolios and expert guidance.
             </p>
-            <Button variant="link" className="text-primary hover:text-primary/90 p-0">
+            <Button variant="link" className="text-Allquity hover:text-Allquity/90 p-0">
               Learn the basics
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>

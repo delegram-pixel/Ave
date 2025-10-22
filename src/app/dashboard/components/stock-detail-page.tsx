@@ -91,7 +91,7 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
 
         {/* Tabs */}
         <div className="flex border-b border-border">
-          <button className="flex-1 py-3 text-sm font-medium text-foreground border-b-2 border-primary">About</button>
+          <button className="flex-1 py-3 text-sm font-medium text-foreground border-b-2 border-Allquity">About</button>
           <button className="flex-1 py-3 text-sm font-medium text-muted-foreground hover:text-foreground">
             Financials
           </button>
@@ -173,7 +173,7 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
               onClick={() => setSelectedPeriod(period)}
               className={
                 selectedPeriod === period
-                  ? "bg-primary text-primary-foreground"
+                  ? "bg-Allquity text-Background"
                   : "text-muted-foreground hover:text-foreground"
               }
             >
@@ -183,16 +183,16 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
         </div>
 
         {/* Recurring Purchase Card */}
-        <Card className="mb-4 p-4 bg-gradient-to-br from-primary to-primary/80 border-0 cursor-pointer hover:scale-[1.02] transition-transform">
+        <Card className="mb-4 p-4 bg-gradient-to-br from-Allquity to-Allquity/80 border-0 cursor-pointer hover:scale-[1.02] transition-transform">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="text-3xl">💰</div>
               <div>
-                <h3 className="text-primary-foreground font-semibold">Set a recurring purchase</h3>
-                <p className="text-primary-foreground/90 text-sm">Automate your investing</p>
+                <h3 className="text-Background font-semibold">Set a recurring purchase</h3>
+                <p className="text-Background/90 text-sm">Automate your investing</p>
               </div>
             </div>
-            <div className="text-primary-foreground">›</div>
+            <div className="text-Background">›</div>
           </div>
         </Card>
 
@@ -203,7 +203,7 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
 
         {/* Buy Button */}
         <Button
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium h-12 text-lg"
+          className="w-full bg-Allquity hover:bg-Allquity/90 text-Background font-medium h-12 text-lg"
           onClick={handleBuyClick}
         >
           + Buy

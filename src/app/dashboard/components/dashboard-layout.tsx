@@ -9,10 +9,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
 const navigation = [
-  { name: "Home", href: "/", icon: Home },
-  { name: "Invest", href: "/invest", icon: TrendingUp },
-  { name: "Learn", href: "/learn", icon: BookOpen },
-  { name: "Help", href: "/help", icon: HelpCircle },
+  { name: "Home", href: "/dashboard", icon: Home },
+  { name: "Invest", href: "/dashboard/invest", icon: TrendingUp },
+  { name: "Learn", href: "/dashboard/learn", icon: BookOpen },
+  { name: "Help", href: "/dashboard/help", icon: HelpCircle },
 ]
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -21,11 +21,11 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-screen bg-background">
       {/* Sidebar Navigation */}
-      <aside className="w-64 border-r border-border bg-sidebar flex flex-col">
+      <aside className="w-64 border-r border-gray-700 bg-gray-800 flex flex-col">
         {/* Logo */}
         <div className="p-6 border-b border-sidebar-border">
-          <h1 className="text-2xl font-bold text-primary">Bamboo</h1>
-          <p className="text-sm text-muted-foreground mt-1">Investment Platform</p>
+          <h1 className="text-2xl font-bold text-primary">Allquity</h1>
+          <p className="text-sm text-gray-400 mt-1">Investment Platform</p>
         </div>
 
         {/* Navigation Links */}
@@ -40,7 +40,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                   isActive
                     ? "bg-primary text-primary-foreground font-medium"
-                    : "text-muted-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                    : "text-gray-300 hover:bg-gray-700 hover:text-white"
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -51,15 +51,15 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
         </nav>
 
         {/* User Profile */}
-        <div className="p-4 border-t border-sidebar-border">
+        <div className="p-4 border-t border-gray-700">
           <Link href="/profile">
-            <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-sidebar-accent cursor-pointer hover:bg-card transition-colors">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+            <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-700 cursor-pointer hover:bg-gray-600 transition-colors">
+              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-primary">
                 <User className="w-5 h-5 text-primary-foreground" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-sidebar-foreground truncate">Bamidele I.</p>
-                <p className="text-xs text-muted-foreground truncate">View Profile</p>
+                <p className="text-sm font-medium text-white truncate">Callistus I.</p>
+                <p className="text-xs text-gray-400 truncate">View Profile</p>
               </div>
             </div>
           </Link>
@@ -69,21 +69,21 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Top Header */}
-        <header className="h-16 border-b border-border bg-sidebar flex items-center justify-between px-8">
+        <header className="h-16 border-b border-gray-700 bg-gray-800 flex items-center justify-between px-8">
           <div className="flex-1 max-w-xl">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input
                 type="search"
                 placeholder="Search investments, transactions..."
-                className="pl-10 bg-card border-border text-foreground placeholder:text-muted-foreground"
+                className="pl-10 bg-gray-700 border-gray-600 text-white placeholder-gray-400"
               />
             </div>
           </div>
           <div className="flex items-center gap-4 ml-4">
-            <Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-foreground">
+            <Button variant="ghost" size="icon" className="relative text-gray-400 hover:text-white">
               <Bell className="w-5 h-5" />
-              <span className="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary"></span>
             </Button>
           </div>
         </header>

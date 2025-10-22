@@ -267,7 +267,7 @@ export function Header() {
             </button> */}
 
             <div className="hidden lg:flex items-center space-x-2">
-              <Link href="/dashboard">
+              <Link href="/auth/login">
                 <Button
                   variant="outline"
                   className="bg-[#a4dd6b] hover:bg-[#8ec65a] text-[#061519] border-[#a4dd6b] transition-colors"
@@ -312,7 +312,7 @@ export function Header() {
               <a href="#" className="hover:text-[#a4dd6b] transition-colors">
                 About Us
               </a>
-              <Link href="/dashboard">
+              <Link href="/auth/login">
                 <Button
                   variant="outline"
                   className="bg-[#a4dd6b] hover:bg-[#8ec65a] text-[#061519] border-[#a4dd6b] w-fit transition-colors"
