@@ -36,7 +36,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Dark theme as default for Bamboo */
+  /* Dark theme as default for Allquity */
   --background: #061519;
   --foreground: oklch(1 0 0);
   --card: oklch(0.15 0.02 200);

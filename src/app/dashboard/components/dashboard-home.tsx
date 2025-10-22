@@ -13,7 +13,7 @@ const promoCards = [
     color: "from-emerald-600 to-emerald-700",
   },
   {
-    title: "What's new in Bamboo",
+    title: "What's new in Allquity",
     subtitle: "Discover latest features",
     color: "from-teal-600 to-teal-700",
   },
@@ -57,10 +57,10 @@ export function DashboardHome() {
       {/* Total Wealth Section */}
       <Card className="mb-8 p-8 bg-gray-800 border-gray-700">
         <div className="mb-6">
-          <p className="text-muted-foreground text-sm mb-2">
+          <p className="text-white text-sm mb-2">
             Your total wealth <span className="text-allquity">in NGN</span>
           </p>
-          <h2 className="text-5xl font-bold text-foreground mb-6">₦0.00</h2>
+          <h2 className="text-5xl font-bold text-white mb-6">₦0.00</h2>
           <div className="flex gap-4">
             <Button
               className="bg-allquity hover:bg-allquity/90 text-primary-foreground font-medium"
@@ -69,7 +69,7 @@ export function DashboardHome() {
               <Plus className="w-4 h-4 mr-2" />
               Add money
             </Button>
-            <Button variant="outline" className="border-border text-foreground hover:bg-accent bg-transparent">
+            <Button variant="outline" className="border-border text-white hover:bg-gray-300 bg-transparent">
               <Minus className="w-4 h-4 mr-2" />
               Withdraw
             </Button>
@@ -88,11 +88,11 @@ export function DashboardHome() {
                   <Users className="w-6 h-6 text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="text-foreground font-medium">Referrals</h3>
-                  <p className="text-muted-foreground text-sm">Invite friends to earn</p>
+                  <h3 className="text-white font-medium">Referrals</h3>
+                  <p className="text-gray-300 text-sm">Invite friends to earn</p>
                 </div>
               </div>
-              <p className="text-2xl font-bold text-foreground">$0.00</p>
+              <p className="text-2xl font-bold text-white">$0.00</p>
             </div>
           </Card>
 
@@ -108,8 +108,8 @@ export function DashboardHome() {
           {/* Portfolio Section */}
           <div>
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-foreground">Portfolio</h2>
-              <Button variant="link" className="text-allquity hover:text-allquity/90">
+              <h2 className="text-xl font-semibold text-[#a4dd6b]">Portfolio</h2>
+              <Button variant="link" className="text-[#a4dd6b] hover:text-[#a4dd6b]/90 p-0 h-auto">
                 + New Investment
               </Button>
             </div>
@@ -117,19 +117,19 @@ export function DashboardHome() {
               {portfolioItems.map((item, index) => (
                 <Card
                   key={index}
-                  className="w-full p-6 bg-gray-800 rounded-lg border-gray-700 text-left hover:bg-gray-700 transition-colors flex items-center gap-4"
+                  className="w-full p-4 bg-gray-800 rounded-lg border border-gray-700 hover:bg-gray-700 transition-colors"
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between w-full">
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-lg ${item.color} flex items-center justify-center`}>
                         <item.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-foreground font-medium">{item.name}</h4>
-                        <p className="text-muted-foreground text-xs">{item.currency}</p>
+                        <h4 className="text-white font-medium">{item.name}</h4>
+                        <p className="text-white text-xs">{item.currency}</p>
                       </div>
                     </div>
-                    <p className="text-lg font-semibold text-foreground">{item.amount}</p>
+                    <p className="text-lg font-semibold text-white">{item.amount}</p>
                   </div>
                 </Card>
               ))}
@@ -141,24 +141,24 @@ export function DashboardHome() {
         <div className="space-y-6">
           {/* Cash Section */}
           <div>
-            <h2 className="text-xl font-semibold text-foreground mb-4">Cash</h2>
+            <h2 className="text-xl font-semibold text-[#a4dd6b] mb-4">Cash</h2>
             <div className="space-y-3">
               {wallets.map((wallet, index) => (
                 <Card
                   key={index}
-                  className="w-full p-6 bg-gray-800 rounded-lg border-gray-700 text-left hover:bg-gray-700 transition-colors flex items-center gap-4"
+                  className="w-full p-4 bg-gray-800 rounded-lg border border-gray-700 hover:bg-gray-700 transition-colors"
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between w-full">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center text-xl">
                         {wallet.flag}
                       </div>
                       <div>
-                        <h4 className="text-foreground font-medium">{wallet.name}</h4>
-                        <p className="text-muted-foreground text-xs">Available balance</p>
+                        <h4 className="text-white font-medium">{wallet.name}</h4>
+                        <p className="text-gray-300 text-xs">Available balance</p>
                       </div>
                     </div>
-                    <p className="text-lg font-semibold text-foreground">{wallet.amount}</p>
+                    <p className="text-lg font-semibold text-white">{wallet.amount}</p>
                   </div>
                 </Card>
               ))}
@@ -166,26 +166,26 @@ export function DashboardHome() {
           </div>
 
           {/* Quick Actions */}
-          <Card className="p-6 bg-card border-border">
-            <h3 className="text-foreground font-semibold mb-4">Quick Actions</h3>
-            <div className="space-y-2">
+          <Card className="p-6 bg-gray-800 border border-gray-700">
+            <h3 className="text-[#a4dd6b] font-semibold mb-4">Quick Actions</h3>
+            <div className="space-y-3">
               <Button
                 variant="outline"
-                className="w-full justify-start border-border text-foreground hover:bg-accent bg-transparent"
+                className="w-full justify-start border-gray-600 text-white hover:bg-[#a4dd6b]/20 hover:border-[#a4dd6b]/30 bg-transparent h-12 transition-colors"
               >
                 <TrendingUp className="w-4 h-4 mr-2" />
                 Start Investing
               </Button>
               <Button
                 variant="outline"
-                className="w-full justify-start border-border text-foreground hover:bg-accent bg-transparent"
+                className="w-full justify-start border-gray-600 text-white hover:bg-[#a4dd6b]/20 hover:border-[#a4dd6b]/30 bg-transparent h-12 transition-colors"
               >
                 <Users className="w-4 h-4 mr-2" />
                 Refer a Friend
               </Button>
               <Button
                 variant="outline"
-                className="w-full justify-start border-border text-foreground hover:bg-accent bg-transparent"
+                className="w-full justify-start border-gray-600 text-white hover:bg-[#a4dd6b]/20 hover:border-[#a4dd6b]/30 bg-transparent h-12 transition-colors"
               >
                 <Wallet className="w-4 h-4 mr-2" />
                 Fund Wallet
