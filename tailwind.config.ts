@@ -50,20 +50,8 @@ export default {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
         },
-<<<<<<< HEAD
         allquity: '#a4dd6b',
         'dashboard-bg': '#061519',
-=======
-        // Moomoo custom colors
-        moomoo: {
-          orange: '#e4601f',
-          'orange-hover': '#d5551a',
-          dark: '#121212',
-          light: '#f6f4f2',
-          green: '#6c9b88',
-          gray: '#6a5750',
-        }
->>>>>>> new-origin/dev
       },
       borderRadius: {
         lg: 'var(--radius)',

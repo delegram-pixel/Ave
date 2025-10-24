@@ -19,12 +19,8 @@
       }
     ],
     "paths": {
-<<<<<<< HEAD
       "@/*": ["./src/*"],
       "~/*": ["./*"]
-=======
-      "@/*": ["./src/*"]
->>>>>>> new-origin/dev
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
