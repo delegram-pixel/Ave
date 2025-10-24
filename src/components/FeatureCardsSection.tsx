@@ -49,7 +49,7 @@ export function FeatureCardsSection() {
           </div>
 
           {/* Right side - Feature cards */}
-          <div className="lg:col-span-2 grid md:grid-cols-2 gap-4 sm:gap-6 sm:px-0">
+          <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4 sm:gap-6">
             {features.map((feature, index) => (
               <div
                 key={index}

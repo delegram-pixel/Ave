@@ -49,7 +49,7 @@ export function OneStopTradingSection() {
         </div>
 
         {/* Main feature cards */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
             <div
               key={index}
@@ -115,14 +115,14 @@ export function OneStopTradingSection() {
         </div>
 
         {/* Additional features */}
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-8">
           {additionalFeatures.map((feature, index) => (
             <div
               key={index}
               className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors cursor-pointer"
             >
               <span className="text-2xl">{feature.icon}</span>
-              <span className="font-medium">{feature.title}</span>
+              <span className="font-medium text-sm sm:text-base">{feature.title}</span>
               <ChevronRight className="w-4 h-4" />
             </div>
           ))}

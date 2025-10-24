@@ -104,8 +104,8 @@ export function StockMarketSection() {
           </div>
         </div>
 
-        {/* Stock table */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        {/* Stock table - Desktop */}
+        <div className="hidden md:block bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead className="bg-gray-50">
@@ -161,6 +161,33 @@ export function StockMarketSection() {
               </tbody>
             </table>
           </div>
+        </div>
+
+        {/* Stock cards - Mobile */}
+        <div className="md:hidden space-y-4">
+          {stockData.map((stock, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+              <div className="flex justify-between items-start">
+                <div>
+                  <div className="text-sm font-medium text-gray-900">{stock.symbol}</div>
+                  <div className="text-sm text-gray-500">{stock.name}</div>
+                </div>
+                <button className="text-gray-400 hover:text-[#a4dd6b]">
+                  <Heart className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="flex justify-between items-end mt-4">
+                <div>
+                  <div className="text-lg font-medium text-gray-900">{stock.price}</div>
+                  <div className="flex space-x-2 text-sm">
+                    <span className="text-green-600">{stock.change}</span>
+                    <span className="text-green-600">{stock.changePercent}</span>
+                  </div>
+                </div>
+                <MiniChart positive={stock.changePercent.startsWith('+')} />
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="text-center mt-8">

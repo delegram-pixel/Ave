@@ -83,15 +83,15 @@ export function AssetsPage() {
   })
 
   return (
-    <div className="p-8 max-w-7xl mx-auto">
+    <div className="p-4 md:p-8 max-w-7xl mx-auto">
       {/* Page Header */}
-      <div className="mb-8">
+      <div className="mb-8 text-center md:text-left">
         <h1 className="text-3xl font-bold text-[#a4dd6b] mb-2">Assets</h1>
         <p className="text-white">Explore investment opportunities and grow your wealth</p>
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex gap-3 mb-8">
+      <div className="flex flex-col md:flex-row gap-3 mb-8">
         {filterTabs.map((tab) => (
           <Button
             key={tab.id}
@@ -99,8 +99,8 @@ export function AssetsPage() {
             variant={activeFilter === tab.id ? "default" : "outline"}
             className={
               activeFilter === tab.id
-                ? "bg-allquity hover:bg-allquity/90 text-primary-foreground font-medium"
-                : "border-border text-white hover:bg-accent hover:text-[#a4dd6b]"
+                ? "bg-allquity hover:bg-allquity/90 text-primary-foreground font-medium w-full md:w-auto"
+                : "border-border text-white hover:bg-accent hover:text-[#a4dd6b] w-full md:w-auto"
             }
           >
             {tab.label}
@@ -109,8 +109,8 @@ export function AssetsPage() {
       </div>
 
       {/* Promotional Banner */}
-      <Card className="mb-8 p-8 bg-gradient-to-br from-emerald-700 to-teal-700 border-0 relative overflow-hidden">
-        <div className="relative z-10 max-w-xl">
+      <Card className="mb-8 p-8 bg-gradient-to-br from-emerald-700 to-teal-700 border-0 relative overflow-hidden text-center md:text-left">
+        <div className="relative z-10 max-w-xl mx-auto md:mx-0">
           <h2 className="text-white font-bold text-2xl mb-2">Personalised investing?</h2>
           <p className="text-white/90 mb-6">Set up your account to work for you.</p>
           <Button className="bg-allquity hover:bg-allquity/90 text-primary-foreground font-medium">
@@ -118,13 +118,13 @@ export function AssetsPage() {
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>
-        <div className="absolute right-8 bottom-0 text-9xl opacity-10">📊</div>
+        <div className="absolute right-8 bottom-0 text-9xl opacity-10 hidden md:block">📊</div>
       </Card>
 
       {/* All Assets Offerings */}
       <div>
-        <h2 className="text-2xl font-semibold text-[#a4dd6b] mb-6">All Assets Offerings</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-2xl font-semibold text-[#a4dd6b] mb-6 text-center md:text-left">All Assets Offerings</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAssets.map((asset) => {
             const Icon = asset.icon
             const CardContent = (
@@ -164,8 +164,8 @@ export function AssetsPage() {
 
       {/* Additional Info Section */}
       <Card className="mt-8 p-6 bg-card border-border">
-        <div className="flex items-start gap-4">
-          <div className="w-12 h-12 rounded-lg bg-allquity/20 flex items-center justify-center flex-shrink-0">
+        <div className="flex flex-col md:flex-row items-start gap-4 text-center md:text-left">
+          <div className="w-12 h-12 rounded-lg bg-allquity/20 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
             <TrendingUp className="w-6 h-6 text-allquity" />
           </div>
           <div>

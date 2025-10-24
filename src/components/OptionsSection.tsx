@@ -45,7 +45,7 @@ export function OptionsSection() {
             </div>
   
             {/* Right side - Phone mockup */}
-            <div className="relative">
+            <div className="relative hidden lg:block">
               <div className="relative max-w-sm mx-auto">
                 {/* Phone frame */}
                 <div className="bg-gray-900 rounded-3xl p-2 shadow-2xl">

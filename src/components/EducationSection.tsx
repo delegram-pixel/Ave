@@ -30,21 +30,21 @@ export function EducationSection() {
             backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=600&fit=crop&crop=center')"
           }}
         >
-          <div className="absolute inset-0 bg-[#061519]/60"></div>
+          <div className="absolute inset-0 bg-[#061519]/80"></div>
         </div>
   
         <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl relative z-10">
-          <div className="mb-12">
+          <div className="mb-12 text-center md:text-left">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Navigate trading<br />
               with greater confidence
             </h2>
           </div>
   
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
             {sections.map((section, index) => (
               <div key={index} className="space-y-4">
-                <div className="flex items-center space-x-3 mb-4">
+                <div className="flex items-center justify-center md:justify-start space-x-3 mb-4">
                   <span className="text-3xl">{section.icon}</span>
                   <h3 className="text-2xl font-bold">{section.title}</h3>
                 </div>

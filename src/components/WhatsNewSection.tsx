@@ -1,27 +1,27 @@
 'use client';
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 export function WhatsNewSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [slidesInView, setSlidesInView] = useState(3);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+    const calculateSlidesInView = () => {
+      if (window.innerWidth < 768) {
+        setSlidesInView(1);
+      } else {
+        setSlidesInView(3);
+      }
     };
-    
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
-  useEffect(() => {
-    setCurrentSlide(0);
-  }, [isMobile]);
+    calculateSlidesInView();
+    window.addEventListener('resize', calculateSlidesInView);
+    return () => window.removeEventListener('resize', calculateSlidesInView);
+  }, []);
 
   const cards = [
     {
@@ -61,24 +61,15 @@ export function WhatsNewSection() {
     },
   ];
 
-  const slidesInView = isMobile ? 1 : 3;
   const totalCards = cards.length;
   const maxSlide = totalCards > slidesInView ? totalCards - slidesInView : 0;
 
   const nextSlide = () => {
-    if (isMobile) {
-      setCurrentSlide((prev) => (prev + 1) % totalCards);
-    } else {
-      setCurrentSlide((prev) => Math.min(prev + 1, maxSlide));
-    }
+    setCurrentSlide((prev) => Math.min(prev + 1, maxSlide));
   };
 
   const prevSlide = () => {
-    if (isMobile) {
-      setCurrentSlide((prev) => (prev - 1 + totalCards) % totalCards);
-    } else {
-      setCurrentSlide((prev) => Math.max(prev - 1, 0));
-    }
+    setCurrentSlide((prev) => Math.max(prev - 1, 0));
   };
 
   return (
@@ -89,31 +80,17 @@ export function WhatsNewSection() {
         </h2>
 
         <div className="relative">
-          {/* Cards container */}
-          <div className="overflow-hidden md:mx-12 relative">
-            {/* Navigation buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow md:left-[-2rem]"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
-            </button>
-
-            <button
-              onClick={nextSlide}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow md:right-[-2rem]"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
-            </button>
+          <div className="overflow-hidden" ref={containerRef}>
             <div
               className="flex transition-transform duration-300 ease-in-out"
-              style={{ 
+              style={{
                 transform: `translateX(-${currentSlide * (100 / slidesInView)}%)`,
+                width: `${(totalCards / slidesInView) * 100}%`,
               }}
             >
               {cards.map((card, index) => (
-                <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-3">
-                  <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                <div key={index} className="w-full px-2" style={{ flexBasis: `${100 / totalCards}%` }}>
+                  <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
                     <div className="relative w-full h-48">
                       <Image
                         src={card.image}
@@ -123,16 +100,16 @@ export function WhatsNewSection() {
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-grow">
                       <h3 className="font-bold text-xl text-gray-900 mb-3">
                         {card.title}
                       </h3>
-                      <p className="text-gray-600 mb-4 leading-relaxed">
+                      <p className="text-gray-600 mb-4 leading-relaxed flex-grow">
                         {card.description}
                       </p>
                       <a
                         href="#"
-                        className="text-[#a4dd6b] font-semibold hover:text-[#8ec65a] transition-colors"
+                        className="text-[#a4dd6b] font-semibold hover:text-[#8ec65a] transition-colors mt-auto"
                       >
                         {card.cta}
                       </a>
@@ -147,6 +124,23 @@ export function WhatsNewSection() {
               ))}
             </div>
           </div>
+
+          {/* Navigation buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow -translate-x-1/2 disabled:opacity-50"
+            disabled={currentSlide === 0}
+          >
+            <ChevronLeft className="w-6 h-6 text-gray-600" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow translate-x-1/2 disabled:opacity-50"
+            disabled={currentSlide === maxSlide}
+          >
+            <ChevronRight className="w-6 h-6 text-gray-600" />
+          </button>
         </div>
       </div>
     </section>

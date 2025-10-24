@@ -47,10 +47,10 @@ export function PromotionSection() {
           </div>
 
           {/* Right side - Visual elements */}
-          <div className="relative">
+          <div className="relative w-full max-w-md mx-auto">
             <div className="text-center">
               {/* NVDA stock visualization */}
-              <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-3xl p-8 shadow-2xl transform rotate-3">
+              <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-3xl p-8 shadow-2xl transform sm:rotate-3">
                 <div className="text-white text-center space-y-4">
                   <div className="text-2xl font-bold">NVDA</div>
                   <div className="text-4xl font-bold">$445.78</div>

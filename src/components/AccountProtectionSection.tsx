@@ -24,14 +24,14 @@ export function AccountProtectionSection() {
           <div className="space-y-8">
             {protections.map((protection, index) => (
               <div key={index} className="border-b border-[#0f2b33] pb-6 last:border-b-0">
-                <div className="grid lg:grid-cols-3 gap-8 items-start">
-                  <div className="lg:col-span-1">
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-1">
                     <h3 className="text-xl font-semibold text-white">
                       {protection.title}
                     </h3>
                   </div>
   
-                  <div className="lg:col-span-2">
+                  <div className="md:col-span-2">
                     <p className="text-gray-300 leading-relaxed mb-2">
                       {protection.description}
                     </p>

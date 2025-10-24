@@ -38,10 +38,10 @@ export function DashboardHome() {
   const [showAddMoneyModal, setShowAddMoneyModal] = useState(false)
 
   return (
-    <div className="p-4 md:p-8 max-w-7xl mx-auto bg-gray-950 min-h-full">
+    <div className="p-4 md:p-8 max-w-7xl mx-auto bg-dashboard-bg min-h-full">
       {/* Promotional Cards Carousel */}
       <div className="mb-8">
-        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+        <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
           {promoCards.map((card, index) => (
             <Card
               key={index}
@@ -61,7 +61,7 @@ export function DashboardHome() {
             Your total wealth <span className="text-allquity">in NGN</span>
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">₦0.00</h2>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button
               className="bg-allquity hover:bg-allquity/90 text-primary-foreground font-medium"
               onClick={() => setShowAddMoneyModal(true)}
@@ -79,7 +79,7 @@ export function DashboardHome() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Column */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           {/* Referrals */}
           <Card className="p-6 bg-gray-800 border-gray-700">
             <div className="flex items-center justify-between">
@@ -138,7 +138,7 @@ export function DashboardHome() {
         </div>
 
         {/* Right Column */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           {/* Cash Section */}
           <div>
             <h2 className="text-xl font-semibold text-[#a4dd6b] mb-4">Cash</h2>

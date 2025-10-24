@@ -99,15 +99,11 @@ export function Footer() {
         <div className="pt-12 border-t border-[#0f2b33]">
           <h3 className="font-semibold mb-6 text-lg text-[#a4dd6b]">Follow us on</h3>
           <div className="flex flex-wrap gap-4">
-            {socialIcons.map((social, index) => (
-              <a
-                key={index}
-                href="#"
-                className="w-10 h-10 rounded-full bg-[#0f2b33] flex items-center justify-center text-white hover:bg-[#a4dd6b] hover:text-[#061519] transition-colors"
-              >
-                <span className="text-sm">{social.icon}</span>
-              </a>
-            ))}
+            <a href="#" aria-label="Facebook" className="hover:text-white transition-colors"><Facebook className="w-6 h-6" /></a>
+            <a href="#" aria-label="Twitter" className="hover:text-white transition-colors"><Twitter className="w-6 h-6" /></a>
+            <a href="#" aria-label="Instagram" className="hover:text-white transition-colors"><Instagram className="w-6 h-6" /></a>
+            <a href="#" aria-label="Youtube" className="hover:text-white transition-colors"><Youtube className="w-6 h-6" /></a>
+            <a href="#" aria-label="Linkedin" className="hover:text-white transition-colors"><Linkedin className="w-6 h-6" /></a>
           </div>
         </div>
 
@@ -150,14 +146,6 @@ export function Footer() {
           <p>
             The products and services offered on this website are subject to applicable laws, regulations, and terms of use, and may not be available in all jurisdictions. Please review our Privacy Policy, Terms of Use, and Risk Disclosures for additional important information.
           </p>
-
-              <div className="flex flex-wrap space-x-4 text-[#a4dd6b]">
-                <a href="#" aria-label="Facebook" className="hover:text-white transition-colors"><Facebook className="w-6 h-6" /></a>
-                <a href="#" aria-label="Twitter" className="hover:text-white transition-colors"><Twitter className="w-6 h-6" /></a>
-                <a href="#" aria-label="Instagram" className="hover:text-white transition-colors"><Instagram className="w-6 h-6" /></a>
-                <a href="#" aria-label="Youtube" className="hover:text-white transition-colors"><Youtube className="w-6 h-6" /></a>
-                <a href="#" aria-label="Linkedin" className="hover:text-white transition-colors"><Linkedin className="w-6 h-6" /></a>
-              </div>
         </div>
 
         {/* Copyright */}

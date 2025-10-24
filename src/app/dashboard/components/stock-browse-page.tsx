@@ -123,16 +123,16 @@ export function StockBrowsePage() {
   )
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-sidebar border-b border-border">
+      <div className="sticky top-0 z-10 bg-card border-b border-border">
         <div className="flex items-center gap-4 p-4">
           <Link href="/dashboard/invest">
-            <Button variant="ghost" size="icon" className="text-foreground">
+            <Button variant="ghost" size="icon">
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
-          <h1 className="text-xl font-semibold text-foreground">Search Stocks</h1>
+          <h1 className="text-xl font-semibold">Search Stocks</h1>
         </div>
 
         {/* Search Bar */}
@@ -144,19 +144,19 @@ export function StockBrowsePage() {
               placeholder="Search US Stocks"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-card border-border text-foreground placeholder:text-muted-foreground h-12"
+              className="pl-10 bg-background border-border h-12"
             />
           </div>
         </div>
 
         {/* Featured Portfolios */}
         <div className="px-4 pb-4">
-          <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+          <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
             {featuredPortfolios.map((portfolio, index) => (
               <Button
                 key={index}
                 variant="outline"
-                className="whitespace-nowrap border-border text-foreground hover:bg-accent bg-transparent"
+                className="whitespace-nowrap border-border hover:bg-accent bg-card"
               >
                 {portfolio.name}
               </Button>
@@ -168,12 +168,12 @@ export function StockBrowsePage() {
       {/* Content */}
       <div className="p-4">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold text-foreground">Featured Stocks</h2>
+          <h2 className="text-lg font-semibold">Featured Stocks</h2>
           <div className="flex gap-2">
             <Button
               variant="outline"
               size="sm"
-              className="border-border text-foreground hover:bg-accent bg-transparent"
+              className="border-border hover:bg-accent bg-card"
             >
               <ArrowUpDown className="w-4 h-4 mr-2" />
               Sort
@@ -181,7 +181,7 @@ export function StockBrowsePage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-border text-foreground hover:bg-accent bg-transparent"
+              className="border-border hover:bg-accent bg-card"
             >
               <SlidersHorizontal className="w-4 h-4 mr-2" />
               Filter
@@ -190,16 +190,16 @@ export function StockBrowsePage() {
         </div>
 
         {/* Stock List */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           {filteredStocks.map((stock) => (
-            <Link key={stock.symbol} href={`/stocks/${stock.symbol.toLowerCase()}`}>
+            <Link key={stock.symbol} href={`/dashboard/stocks/${stock.symbol.toLowerCase()}`}>
               <Card className="p-4 bg-card border-border hover:bg-accent transition-colors cursor-pointer">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3 flex-1">
-                    <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center overflow-hidden">
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-3 flex-1 min-w-0">
+                    <div className="w-12 h-12 rounded-lg bg-secondary flex-shrink-0 flex items-center justify-center overflow-hidden">
                       <Image 
                         src={stock.logo || "/placeholder.svg"} 
-                        alt={stock.name} 
+                        alt={`${stock.name} logo`}
                         width={32} 
                         height={32} 
                         className="object-contain"
@@ -211,19 +211,19 @@ export function StockBrowsePage() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-foreground font-medium truncate">{stock.name}</h3>
+                      <h3 className="font-medium truncate">{stock.name}</h3>
                       <p className="text-muted-foreground text-sm">{stock.symbol}</p>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-foreground font-semibold">${stock.price.toFixed(2)}</p>
+                  <div className="text-right flex-shrink-0">
+                    <p className="font-semibold">${stock.price.toFixed(2)}</p>
                     <div className="flex items-center justify-end gap-1">
                       {stock.change >= 0 ? (
                         <TrendingUp className="w-3 h-3 text-allquity" />
                       ) : (
                         <TrendingDown className="w-3 h-3 text-destructive" />
                       )}
-                      <p className={`text-sm ${stock.change >= 0 ? "text-allquity" : "text-destructive"}`}>
+                      <p className={`text-sm font-medium ${stock.change >= 0 ? "text-allquity" : "text-destructive"}`}>
                         {stock.changePercent.toFixed(2)}%
                       </p>
                     </div>

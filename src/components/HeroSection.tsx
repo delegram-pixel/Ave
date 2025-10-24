@@ -18,17 +18,17 @@ export function HeroSection() {
             </div>
 
             {/* Awards */}
-            <div className="flex flex-wrap gap-2 sm:gap-4 justify-center lg:justify-start">
-              <div className="bg-[#a4dd6b] text-[#061519] px-3 py-2 rounded-lg text-sm font-semibold">
+            <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-4 justify-center lg:justify-start">
+              <div className="bg-[#a4dd6b] text-[#061519] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold">
                 Best Stock Trading App
               </div>
-              <div className="bg-[#a4dd6b] text-[#061519] px-3 py-2 rounded-lg text-sm font-semibold">
+              <div className="bg-[#a4dd6b] text-[#061519] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold">
                 Best Mobile App
               </div>
-              <div className="bg-[#a4dd6b] text-[#061519] px-3 py-2 rounded-lg text-sm font-semibold">
+              <div className="bg-[#a4dd6b] text-[#061519] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold">
                 Best Day Trading Software
               </div>
-              <div className="bg-[#a4dd6b] text-[#061519] px-3 py-2 rounded-lg text-sm font-semibold">
+              <div className="bg-[#a4dd6b] text-[#061519] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold">
                 Best Broker Award
               </div>
             </div>

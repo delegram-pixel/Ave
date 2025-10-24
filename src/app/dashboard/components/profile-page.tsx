@@ -6,17 +6,17 @@ import { ChevronRight, User, Mail, Phone, MapPin, Shield, Bell, CreditCard, LogO
 
 export function ProfilePage() {
   return (
-    <div className="p-8 max-w-4xl mx-auto bg-gray-800">
+    <div className="p-4 md:p-8 max-w-4xl mx-auto bg-dashboard-bg">
       {/* Profile Header */}
-      <div className="mb-8">
+      <div className="mb-8 text-center md:text-left">
         <h1 className="text-3xl font-bold text-foreground mb-2">Profile</h1>
         <p className="text-muted-foreground">Manage your account settings and preferences</p>
       </div>
 
       {/* Profile Info Card */}
-      <Card className="p-6 mb-6 bg-card border-border">
-        <div className="flex items-center gap-6">
-          <div className="w-20 h-20 rounded-full bg-allquity flex items-center justify-center">
+      <Card className="p-6 mb-8 bg-card border-border">
+        <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+          <div className="w-20 h-20 rounded-full bg-allquity flex items-center justify-center flex-shrink-0">
             <User className="w-10 h-10 text-primary-foreground" />
           </div>
           <div className="flex-1">
@@ -24,14 +24,14 @@ export function ProfilePage() {
             <p className="text-muted-foreground">bamidele@example.com</p>
             <p className="text-sm text-muted-foreground mt-1">Member since January 2025</p>
           </div>
-          <Button variant="outline" className="border-allquity text-allquity hover:bg-allquity/10">
+          <Button variant="outline" className="border-allquity text-allquity hover:bg-allquity/10 mt-4 md:mt-0 w-full md:w-auto">
             Edit Profile
           </Button>
         </div>
       </Card>
 
       {/* Account Information */}
-      <div className="mb-6">
+      <div className="mb-8">
         <h3 className="text-lg font-semibold text-foreground mb-4">Account Information</h3>
         <Card className="bg-card border-border divide-y divide-border">
           <button className="w-full flex items-center justify-between p-4 hover:bg-accent transition-colors">
@@ -70,7 +70,7 @@ export function ProfilePage() {
       </div>
 
       {/* Settings */}
-      <div className="mb-6">
+      <div className="mb-8">
         <h3 className="text-lg font-semibold text-foreground mb-4">Settings</h3>
         <Card className="bg-card border-border divide-y divide-border">
           <button className="w-full flex items-center justify-between p-4 hover:bg-accent transition-colors">
