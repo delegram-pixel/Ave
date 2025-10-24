@@ -17,16 +17,16 @@ export function AddMoneyModal({ open, onOpenChange }: AddMoneyModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md bg-white border-border">
+      <DialogContent className="w-[calc(100%-2rem)] max-w-md bg-gray-800 border-gray-700 rounded-lg">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-foreground">Add money</DialogTitle>
-          <p className="text-muted-foreground">Which wallet would you like to deposit to?</p>
+          <DialogTitle className="text-2xl font-bold text-white">Add money</DialogTitle>
+          <p className="text-gray-400">Which wallet would you like to deposit to?</p>
         </DialogHeader>
         <div className="space-y-3 mt-4">
           {wallets.map((wallet, index) => (
             <Card
               key={index}
-              className="p-4 bg-secondary border-border hover:bg-accent transition-colors cursor-pointer"
+              className="p-4 bg-gray-900 border-gray-700 hover:bg-gray-700 transition-colors cursor-pointer"
               onClick={() => {
                 // Handle wallet selection
                 console.log(`Selected ${wallet.name}`)
@@ -39,10 +39,10 @@ export function AddMoneyModal({ open, onOpenChange }: AddMoneyModalProps) {
                     {wallet.flag}
                   </div>
                   <div>
-                    <h4 className="text-foreground font-medium">{wallet.name}</h4>
+                    <h4 className="text-white font-medium">{wallet.name}</h4>
                   </div>
                 </div>
-                <p className="text-lg font-semibold text-foreground">{wallet.amount}</p>
+                <p className="text-lg font-semibold text-white">{wallet.amount}</p>
               </div>
             </Card>
           ))}

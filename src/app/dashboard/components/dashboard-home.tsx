@@ -38,7 +38,7 @@ export function DashboardHome() {
   const [showAddMoneyModal, setShowAddMoneyModal] = useState(false)
 
   return (
-    <div className="p-8 max-w-7xl mx-auto bg-gray-950 min-h-full">
+    <div className="p-4 md:p-8 max-w-7xl mx-auto bg-gray-950 min-h-full">
       {/* Promotional Cards Carousel */}
       <div className="mb-8">
         <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
@@ -55,13 +55,13 @@ export function DashboardHome() {
       </div>
 
       {/* Total Wealth Section */}
-      <Card className="mb-8 p-8 bg-gray-800 border-gray-700">
+      <Card className="mb-8 p-6 md:p-8 bg-gray-800 border-gray-700">
         <div className="mb-6">
           <p className="text-white text-sm mb-2">
             Your total wealth <span className="text-allquity">in NGN</span>
           </p>
-          <h2 className="text-5xl font-bold text-white mb-6">₦0.00</h2>
-          <div className="flex gap-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">₦0.00</h2>
+          <div className="flex flex-wrap gap-4">
             <Button
               className="bg-allquity hover:bg-allquity/90 text-primary-foreground font-medium"
               onClick={() => setShowAddMoneyModal(true)}
