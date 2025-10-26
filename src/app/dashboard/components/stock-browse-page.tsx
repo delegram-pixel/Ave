@@ -1,120 +1,26 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ArrowLeft, Search, TrendingUp, TrendingDown, SlidersHorizontal, ArrowUpDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
+import { stocks as initialStocks } from "./stock-data"
 import Link from "next/link"
-
-const featuredPortfolios = [
-  { name: "Nancy Pelosi's Last Buys", color: "bg-Allquity-orange" },
-  { name: "Warren Buffett's Portfolio", color: "bg-Allquity-green" },
-  { name: "Top Tech Stocks", color: "bg-Allquity-gray" },
-]
-
-const stocks = [
-  {
-    symbol: "AAPL",
-    name: "Apple, Inc.",
-    price: 254.24,
-    change: -4.03,
-    changePercent: -1.56,
-    logo: "https://logo.clearbit.com/apple.com",
-  },
-  {
-    symbol: "AMZN",
-    name: "Amazon.com Inc.",
-    price: 227.56,
-    change: 2.49,
-    changePercent: 1.11,
-    logo: "https://logo.clearbit.com/amazon.com",
-  },
-  {
-    symbol: "ARGT",
-    name: "Global X MSCI Arg...",
-    price: 74.23,
-    change: 4.5,
-    changePercent: 6.47,
-    logo: "/global-x-logo.jpg",
-  },
-  {
-    symbol: "DIS",
-    name: "The Walt Disney C...",
-    price: 111.0,
-    change: -0.84,
-    changePercent: -0.75,
-    logo: "https://logo.clearbit.com/disney.com",
-  },
-  {
-    symbol: "ET",
-    name: "Energy Transfer E...",
-    price: 16.64,
-    change: -0.02,
-    changePercent: -0.11,
-    logo: "/energy-transfer-logo.jpg",
-  },
-  {
-    symbol: "GBTC",
-    name: "Grayscale Bitcoin ...",
-    price: 95.01,
-    change: -1.88,
-    changePercent: -1.94,
-    logo: "/grayscale-bitcoin-logo.jpg",
-  },
-  {
-    symbol: "GOOGL",
-    name: "Alphabet Inc. - Cla...",
-    price: 241.25,
-    change: -3.06,
-    changePercent: -1.25,
-    logo: "https://logo.clearbit.com/google.com",
-  },
-  {
-    symbol: "MSFT",
-    name: "Microsoft Corporat...",
-    price: 522.79,
-    change: -2.42,
-    changePercent: -0.46,
-    logo: "https://logo.clearbit.com/microsoft.com",
-  },
-  {
-    symbol: "TSLA",
-    name: "Tesla, Inc.",
-    price: 342.88,
-    change: 8.45,
-    changePercent: 2.53,
-    logo: "https://logo.clearbit.com/tesla.com",
-  },
-  {
-    symbol: "NVDA",
-    name: "NVIDIA Corporation",
-    price: 891.23,
-    change: 15.67,
-    changePercent: 1.79,
-    logo: "https://logo.clearbit.com/nvidia.com",
-  },
-  {
-    symbol: "META",
-    name: "Meta Platforms, Inc.",
-    price: 478.32,
-    change: -5.21,
-    changePercent: -1.08,
-    logo: "https://logo.clearbit.com/meta.com",
-  },
-  {
-    symbol: "NFLX",
-    name: "Netflix, Inc.",
-    price: 612.45,
-    change: 12.34,
-    changePercent: 2.06,
-    logo: "https://logo.clearbit.com/netflix.com",
-  },
-]
 
 export function StockBrowsePage() {
   const [searchQuery, setSearchQuery] = useState("")
+  const [stocks, setStocks] = useState<typeof initialStocks>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate fetching data
+    setTimeout(() => {
+      setStocks(initialStocks)
+      setLoading(false)
+    }, 1500)
+  }, [])
 
   const filteredStocks = stocks.filter(
     (stock) =>
@@ -123,52 +29,34 @@ export function StockBrowsePage() {
   )
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <div className="sticky top-0 z-10 bg-card border-b border-border">
-        <div className="flex items-center gap-4 p-4">
-          <Link href="/dashboard/invest">
-            <Button variant="ghost" size="icon">
-              <ArrowLeft className="w-5 h-5" />
-            </Button>
-          </Link>
-          <h1 className="text-xl font-semibold">Search Stocks</h1>
-        </div>
-
-        {/* Search Bar */}
-        <div className="px-4 pb-4">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search US Stocks"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-background border-border h-12"
-            />
-          </div>
-        </div>
-
-        {/* Featured Portfolios */}
-        <div className="px-4 pb-4">
-          <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
-            {featuredPortfolios.map((portfolio, index) => (
-              <Button
-                key={index}
-                variant="outline"
-                className="whitespace-nowrap border-border hover:bg-accent bg-card"
-              >
-                {portfolio.name}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </div>
-
+    <div className="min-h-screen bg-dashboard-bg text-white">
       {/* Content */}
-      <div className="p-4">
+      <div className="space-y-6">
+        {/* Back Button */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-muted-foreground hover:text-foreground -ml-2"
+          onClick={() => window.history.back()}
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back
+        </Button>
+        
+        {/* Search Bar */}
+        <div className="relative mb-6">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            type="search"
+            placeholder="Search stocks..."
+            className="w-full bg-card border-border pl-10 focus-visible:ring-1 focus-visible:ring-ring"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold">Featured Stocks</h2>
+          <h2 className="text-lg font-semibold text-allquity">Featured Stocks</h2>
           <div className="flex gap-2">
             <Button
               variant="outline"
@@ -191,47 +79,61 @@ export function StockBrowsePage() {
 
         {/* Stock List */}
         <div className="space-y-3">
-          {filteredStocks.map((stock) => (
-            <Link key={stock.symbol} href={`/dashboard/stocks/${stock.symbol.toLowerCase()}`}>
-              <Card className="p-4 bg-card border-border hover:bg-accent transition-colors cursor-pointer">
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-3 flex-1 min-w-0">
-                    <div className="w-12 h-12 rounded-lg bg-secondary flex-shrink-0 flex items-center justify-center overflow-hidden">
-                      <Image 
-                        src={stock.logo || "/placeholder.svg"} 
-                        alt={`${stock.name} logo`}
-                        width={32} 
-                        height={32} 
-                        className="object-contain"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.onerror = null;
-                          target.src = '/placeholder.svg';
-                        }}
-                      />
+          {loading ? (
+            <div className="flex justify-center items-center h-48">
+              <p>Loading stocks...</p>
+            </div>
+          ) : filteredStocks.length > 0 ? (
+            filteredStocks.map((stock) => (
+              <Link key={stock.symbol} href={`/dashboard/stocks/${stock.symbol.toLowerCase()}`}>
+                <Card className="p-4 bg-card border-border hover:bg-accent transition-colors cursor-pointer">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3 flex-1 min-w-0">
+                      <div className="w-12 h-12 rounded-lg bg-secondary flex-shrink-0 flex items-center justify-center overflow-hidden">
+                        <Image
+                          src={stock.logo || "/placeholder.svg"}
+                          alt={`${stock.name} logo`}
+                          width={32}
+                          height={32}
+                          className="object-contain"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement
+                            target.onerror = null
+                            target.src = "/placeholder.svg"
+                          }}
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-medium truncate">{stock.name}</h3>
+                        <p className="text-muted-foreground text-sm">{stock.symbol}</p>
+                      </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-medium truncate">{stock.name}</h3>
-                      <p className="text-muted-foreground text-sm">{stock.symbol}</p>
+                    <div className="text-right flex-shrink-0">
+                      <p className="font-semibold">${stock.price.toFixed(2)}</p>
+                      <div className="flex items-center justify-end gap-1">
+                        {stock.change >= 0 ? (
+                          <TrendingUp className="w-3 h-3 text-allquity" />
+                        ) : (
+                          <TrendingDown className="w-3 h-3 text-destructive" />
+                        )}
+                        <p
+                          className={`text-sm font-medium ${
+                            stock.change >= 0 ? "text-allquity" : "text-destructive"
+                          }`}
+                        >
+                          {stock.changePercent.toFixed(2)}%
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="text-right flex-shrink-0">
-                    <p className="font-semibold">${stock.price.toFixed(2)}</p>
-                    <div className="flex items-center justify-end gap-1">
-                      {stock.change >= 0 ? (
-                        <TrendingUp className="w-3 h-3 text-allquity" />
-                      ) : (
-                        <TrendingDown className="w-3 h-3 text-destructive" />
-                      )}
-                      <p className={`text-sm font-medium ${stock.change >= 0 ? "text-allquity" : "text-destructive"}`}>
-                        {stock.changePercent.toFixed(2)}%
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          ))}
+                </Card>
+              </Link>
+            ))
+          ) : (
+            <div className="flex justify-center items-center h-48">
+              <p>No stocks found.</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

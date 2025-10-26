@@ -12,7 +12,7 @@ interface AddMoneyModalProps {
 export function AddMoneyModal({ open, onOpenChange }: AddMoneyModalProps) {
   const wallets = [
     { name: "USD Wallet", amount: "$0.00", flag: "🇺🇸", icon: DollarSign },
-    { name: "NGN Wallet", amount: "₦0.00", flag: "🇳🇬", icon: Wallet },
+    { name: "Crypto Wallet", amount: "₿0.00", flag: "₿", icon: Wallet },
   ]
 
   return (

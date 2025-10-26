@@ -69,9 +69,9 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-dashboard-bg text-white overflow-x-hidden">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-card border-b border-border">
+      <div className="sticky top-0 left-0 right-0 z-10 bg-dashboard-bg pt-0 pb-2 w-full">
         <div className="flex items-center justify-between p-4">
           <Link href="/dashboard/stocks">
             <Button variant="ghost" size="icon">
@@ -79,8 +79,8 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
             </Button>
           </Link>
           <div className="text-center">
-            <h1 className="text-lg font-semibold">{stock.symbol}</h1>
-            <p className="text-sm text-muted-foreground truncate max-w-[200px]">{stock.name}</p>
+            <h1 className="text-lg font-semibold text-white">{stock.symbol}</h1>
+            <p className="text-sm text-gray-400 truncate max-w-[200px]">{stock.name}</p>
           </div>
           <Button variant="ghost" size="icon" onClick={() => setIsFavorite(!isFavorite)}>
             <Heart className={`w-5 h-5 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
@@ -88,8 +88,8 @@ export function StockDetailPage({ symbol }: { symbol: string }) {
         </div>
 
         {/* Tabs */}
-        <div className="flex border-b border-border">
-          <button className="flex-1 py-3 text-sm font-medium text-allquity border-b-2 border-allquity">About</button>
+        <div className="flex border-t border-border">
+          <button className="flex-1 py-3 text-sm font-medium text-allquity border-b-2 border-allquity -mb-px">About</button>
           <button className="flex-1 py-3 text-sm font-medium text-muted-foreground hover:text-foreground">
             Financials
           </button>

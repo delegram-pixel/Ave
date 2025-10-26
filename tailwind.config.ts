@@ -51,6 +51,9 @@ export default {
           '5': 'hsl(var(--chart-5))'
         },
         allquity: '#a4dd6b',
+        'Allquity-orange': '#ff6600',
+        'Allquity-green': '#00ff00',
+        'Allquity-gray': '#808080',
         'dashboard-bg': '#061519',
       },
       borderRadius: {

@@ -53,15 +53,6 @@ export function Footer() {
     // }
   // ];
 
-  const socialIcons = [
-    { name: "Twitter", icon: "𝕏" },
-    { name: "Facebook", icon: "f" },
-    { name: "Instagram", icon: "📷" },
-    { name: "LinkedIn", icon: "in" },
-    { name: "YouTube", icon: "▶" },
-    { name: "TradingView", icon: "TV" },
-    { name: "Reddit", icon: "r" }
-  ];
 
   return (
     <footer className="bg-[#061519] text-white py-12">
